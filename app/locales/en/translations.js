@@ -94,30 +94,11 @@ export default {
             explanation2: `We believe that retractions are a real-time window into the self-correcting nature of the scientific process, `,
             explanation3: `and we've learned since starting this project as a `,
             explanation4: `blog `,
-            explanation5: `in 2010 that they're far more common than we initially thought.`
+            explanation5: `in 2010 that they're far more common than we initially thought.`,
+            button: `Browse`
 
         },
-        services: {
-            top: {
-                heading: `Preprint Services`,
-                paragraph: `Leading preprint service providers use this open source infrastructure to support their communities.`
-            },
-            bottom: {
-                p1: `Create your own branded preprint servers backed by the OSF.`,
-                div: {
-                    line1: `Check out the`,
-                    linkText1: `open source code`,
-                    line2: `and the`,
-                    linkText2: `requirements and road map`,
-                    line3: `. Input welcome!`
-                },
-                contact: `Contact us`
-            }
-        },
-        advisory: {
-            heading: `Advisory Group`,
-            paragraph: `Our advisory group includes leaders in preprints and scholarly communication`
-        }
+        latest_blog_post: `Latest blog post`,
     },
     'page-not-found': {
         heading: `Page not found`,

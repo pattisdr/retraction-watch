@@ -9,7 +9,7 @@
                     <div class="retraction-watch-brand"></div>
                 </div>
                 {{!SEARCH}}
-                <div class="retraction-watch-search col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 m-v-xs" >
+                <div class="retraction-watch-search col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 m-t-xs m-b-xl" >
                     {{search-retraction-watch search="search"}}
                 </div>
             </div> {{!END ROW}}
@@ -17,105 +17,46 @@
     </div> {{!END HEADER}}
 
     {{!BROWSE}}
-    <div class="browse-retraction-watch p-v-md">
+    <div class="browse-retraction-watch">
         <div class="container"> {{!CONTAINER DIV}}
-            <div class="row p-v-md">
-                <div class="col-xs-12">
-                    <div class="p-lg"> {{!Retraction Watch Explanation}}
-                        {{t "index.browse.explanation1"}} <strong> {{t "index.browse.explanation2"}} </strong>
-                        {{t "index.browse.explanation3"}}
-                        <a class="blog_link" href="http://retractionwatch.com/"
-                            {{action "click" "link" "Retraction Watch - Index - Blog"}}>
-                            {{t "index.browse.explanation4"}}
-                        </a>
-                        {{t "index.browse.explanation5"}}
-                    </div> {{!END SUBJECTS LIST}}
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-10 p-v-lg">
+                    <div> {{!Retraction Watch Explanation}}
+                        <p class="retraction-watch-explanation">
+                            {{t "index.browse.explanation1"}} <strong> {{t "index.browse.explanation2"}} </strong>
+                            {{t "index.browse.explanation3"}}
+                            <a class="blog_link" href="http://retractionwatch.com/"
+                                {{action "click" "link" "Retraction Watch - Index - Blog"}}>
+                                {{t "index.browse.explanation4"}}
+                            </a>
+                            {{t "index.browse.explanation5"}}
+                        </p>
+                    </div> {{!END EXPLANATION}}
+                    <div class="text-center p-t-md">
+                        {{#link-to "discover"
+                            type="button" class="retraction-watch-browse-button"
+                            invokeAction=(action 'click' 'button' 'Retraction Watch - Index - Browse Button')
+                        }}
+                            {{t "index.browse.button"}}
+                        {{/link-to}}
+                    </div>
                 </div>
             </div>{{!END ROW}}
         </div> {{!END CONTAINER}}
-    </div> {{!END SUBJECTS LIST}}
+    </div> {{!END BROWSE SECTION}}
 
 
     {{#unless theme.isProvider}}
-        {{!SERVICES}}
-        <div class="preprint-tool p-v-md">
+        {{!BLOG POSTS}}
+        <div class="p-v-md">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h2>{{t "index.services.top.heading"}}</h2>
-                        <p class="m-b-lg">{{t "index.services.top.paragraph"}}</p>
+                        <h2 class="blog-post-heading">{{t "index.latest_blog_post"}}</h2>
                     </div>
                 </div>
             </div>
-            <div class="row p-v-md">{{!BRANDED ROW}}
-                {{#each model.brandedProviders as |provider|}}
-                    <div class="col-sm-4">
-                        <a href="/preprints/{{provider.id}}"
-                           title={{provider.name}}
-                           onbeforeclick={{action 'click' 'link' (concat 'Index - Provider - ' provider.name)}}
-                        >
-                            <div class="provider-logo provider-{{provider.id}}"></div>
-                        </a>
-                    </div>
-                {{/each}}
-            </div>
-            <div class="row p-v-md">
-                <div class="col-md-12 text-center">
-                    <p class="lead">
-                        {{t "index.services.bottom.p1"}}
-                        <div class="p-t-sm">
-                            {{t "index.services.bottom.div.line1"}}
-                            <a class="source_code_link" href="https://github.com/CenterForOpenScience/ember-preprints"
-                                {{action "click" "link" "Preprints - Index - GitHub Repo" "https://github.com/CenterForOpenScience/ember-preprints"}}>
-                                {{t "index.services.bottom.div.linkText1"}}
-                            </a>
-                            {{t "index.services.bottom.div.line2"}}
-                            <a class="source_code_link" href="https://docs.google.com/spreadsheets/d/1SocElbBjc_Nhme4-SJv2_zytBd1ys8R5aZDb3POe94c/edit#gid=1340026270"
-                                {{action "click" "link" "Preprints - Index - Requirements and Roadmap" "https://docs.google.com/spreadsheets/d/1SocElbBjc_Nhme4-SJv2_zytBd1ys8R5aZDb3POe94c/edit#gid=1340026270"}}>
-                                {{t "index.services.bottom.div.linkText2"}}
-                            </a>
-                            {{t "index.services.bottom.div.line3"}}
-                        </div>
-                    </p>
-                    <a href="mailto:contact@osf.io" class="btn btn-info btn-lg" onclick={{action "click" "link" "Preprints - Index - Contact"}}>{{t "index.services.bottom.contact"}}</a>
-                </div>
-            </div>
         </div>
-    {{/unless}}
-
-    {{!ADVISORY GROUP}}
-    <div class="preprint-advisory p-v-md">
-        <div class="container">
-            <div class="row">
-                {{#if theme.isProvider}}
-                    {{safe-markup theme.provider.advisoryBoard}}
-                {{else}}
-                    <div class="col-xs-12">
-                        <h2>{{t "index.advisory.heading"}}</h2>
-                        <p class="m-b-lg">{{t "index.advisory.paragraph"}}</p>
-                    </div>
-                    <div class="col-xs-6">
-                        <ul>
-                            <li><b>Devin Berg :</b> engrXiv, University of Wisconsin-Stout</li>
-                            <li><b>Pete Binfield :</b> PeerJ PrePrints</li>
-                            <li><b>Philip Cohen :</b> SocArXiv, University of Maryland</li>
-                            <li><b>Kathleen Fitzpatrick :</b> Modern Language Association</li>
-                            <li><b>John Inglis :</b> bioRxiv, Cold Spring Harbor Laboratory Press</li>
-                            <li><b>Rebecca Kennison :</b> K|N Consultants</li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-6">
-                        <ul>
-                            <li><b>Bethany Nowviskie :</b> Digital Library Federation, University of Virginia</li>
-                            <li><b>Kristen Ratan :</b> CoKo Foundation</li>
-                            <li><b>Oya Rieger :</b> arXiv, Cornell University</li>
-                            <li><b>Judy Ruttenberg :</b> SHARE, Association of Research Libraries</li>
-                            <li><b>Simine Vazire :</b> PsyArXiv, University of California, Davis</li>
-                        </ul>
-                    </div>
-                {{/if}}
-            </div>
-        </div>
-    </div>
+    {{/unless}} {{!END BLOG POSTS}}
 
 </div> {{!END INDEX}}
