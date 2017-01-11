@@ -21,7 +21,6 @@ export default {
         provider_brand: `{{name}} ${preprints}`,
         add_preprint: `Add a preprint`,
         title: `Title`,
-        search_preprints: `Search preprints...`,
         added_on: `Added on`,
         add: `Add`,
         restart: `Restart`,
@@ -87,16 +86,16 @@ export default {
     },
     index: {
         header: {
-            title: {
-                paragraph: `The <span class="f-w-lg">open</span> preprint repository network`
-            },
+            search_retraction_database: `Search retraction database...`,
             powered_by: `Powered by ${brand}`,
-            search: `{{count}} searchable preprints`,
-            as_of: `as of`,
-            example: `See an example`
         },
-        subjects: {
-            heading: `Browse <small>by subject</small>`
+        browse: {
+            explanation1: `We record instances of scientific retractions from journals and publish them in a comprehensive open database. `,
+            explanation2: `We believe that retractions are a real-time window into the self-correcting nature of the scientific process, `,
+            explanation3: `and we've learned since starting this project as a `,
+            explanation4: `blog `,
+            explanation5: `in 2010 that they're far more common than we initially thought.`
+
         },
         services: {
             top: {
@@ -342,9 +341,6 @@ export default {
         },
         'supplementary-file-browser': {
             primary: `Primary`
-        },
-        'taxonomy-top-list': {
-            // Nothing to translate
         },
         'taxonomy-tree': {
             // Nothing to translate

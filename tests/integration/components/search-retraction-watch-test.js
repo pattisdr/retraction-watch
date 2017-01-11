@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('search-retraction-watch', 'Integration | Component | search preprints', {
+moduleForComponent('search-retraction-watch', 'Integration | Component | search retraction watch', {
   integration: true
 });
 

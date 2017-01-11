@@ -58,10 +58,17 @@ ul.comma-list {
 
 .retraction-watch-brand {
     background: url('img/retraction-watch-logo.png') top center no-repeat;
-    height: 70px;
+    height: 200px;
     background-size: contain;
 }
 
+.retraction-watch-explanation {
+    color: #5B2023;
+}
+
+.blog_link {
+    text-decoration: underline;
+}
 
 /* Preprint navbar */
 .preprint-navbar {
@@ -105,7 +112,7 @@ ul.comma-list {
 
 /* Main header with search bar */
 .retraction-watch-header{
-    background:#214661 url('img/preprints-bg.jpg') top center ;
+    background: white;
     padding-top: 150px;
     padding-bottom: 30px;
     border-bottom: 1px solid #dddddd;
@@ -136,8 +143,8 @@ ul.comma-list {
     border-bottom: 1px solid #eee;
 }
 
-/* Subject Panel */
-.preprint-subjects {
+/* Browse Retraction Watch */
+.browse-retraction-watch {
     background-color: #f1f3f2;
     border-bottom: 1px solid #6d8a98;;
     .subject-item a {
@@ -914,10 +921,6 @@ hr {
     height: 34px;
 }
 
-.source_code_link {
-    color: white;
-    text-decoration: underline;
-}
 
 .taxonomy-show-children {
     margin-right: 2px;

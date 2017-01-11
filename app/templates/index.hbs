@@ -5,48 +5,30 @@
         <div class="container"> {{!CONTAINER}}
             <div class="row">{{!HEADER ROW}}
                 {{!TITLE}}
-                <div class="text-center m-t-lg col-xs-12">
+                <div class="text-center m-t-lg m-b-xs p-r-xl col-xs-12"> {{! Logo currently off-center, so adjustment added w/ p-r-xl}}
                     <div class="retraction-watch-brand"></div>
-                    <p class="lead">
-                        <span>{{if theme.isProvider theme.provider.description (t "index.header.title.paragraph")}}</span>
-                        {{#if theme.isProvider}}
-                            <br>
-                            <small>
-                                <a href="https://osf.io/preprints/" onbeforeclick={{action "click" "link" "Index - Powered By"}}>{{t "index.header.powered_by"}}</a>
-                            </small>
-                        {{/if}}
-                    </p>
                 </div>
                 {{!SEARCH}}
-                <div class="preprint-search col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 m-v-lg" >
-                    {{search-preprints search="search"}}
-
-                    {{#if sharePreprintsTotal}}
-                        <p class="p-l-md">
-                            <span class="f-w-lg">{{t "index.header.search" count=(number-format sharePreprintsTotal)}}</span>
-                            <span>{{t "index.header.as_of"}} {{moment-format currentDate "MMMM DD, YYYY"}}</span>
-                        </p>
-                    {{/if}}
+                <div class="retraction-watch-search col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 m-v-xs" >
+                    {{search-retraction-watch search="search"}}
                 </div>
             </div> {{!END ROW}}
-            <div class="row">
-                <div class="text-center col-xs-12">
-                    <p class="lead"> or </p>
-                    <a type="button" class="btn btn-success btn-lg" href={{concat '/preprints/' (if theme.isProvider (concat theme.id '/')) 'submit'}} onclick={{action "click" "link" "Preprints - Index - Add preprint"}}>{{t "global.add_preprint"}}</a>
-                    <div class="m-t-md">{{#link-to (if theme.isProvider "provider.content" "content") (if theme.provider.example theme.provider.example 'khbvy') invokeAction=(action "click" "link" "Preprints - Index - See example")}}{{t "index.header.example"}}{{/link-to}}</div>
-                </div>
-            </div>
         </div> {{!END CONTAINER}}
     </div> {{!END HEADER}}
 
-    {{!SUBJECTS}}
-    <div class="preprint-subjects p-v-md"> {{!SUBJECTS LIST}}
+    {{!BROWSE}}
+    <div class="browse-retraction-watch p-v-md">
         <div class="container"> {{!CONTAINER DIV}}
-            <div class="row p-v-md">{{!SUBJECTS ROW}}
+            <div class="row p-v-md">
                 <div class="col-xs-12">
-                    <h2>{{t "index.subjects.heading"}}</h2>
-                    <div class="subjectsList p-lg"> {{!SUBJECTS LIST}}
-                        {{taxonomy-top-list list=model.taxonomies}}
+                    <div class="p-lg"> {{!Retraction Watch Explanation}}
+                        {{t "index.browse.explanation1"}} <strong> {{t "index.browse.explanation2"}} </strong>
+                        {{t "index.browse.explanation3"}}
+                        <a class="blog_link" href="http://retractionwatch.com/"
+                            {{action "click" "link" "Retraction Watch - Index - Blog"}}>
+                            {{t "index.browse.explanation4"}}
+                        </a>
+                        {{t "index.browse.explanation5"}}
                     </div> {{!END SUBJECTS LIST}}
                 </div>
             </div>{{!END ROW}}
