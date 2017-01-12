@@ -17,6 +17,7 @@ export default {
         search: `Search`,
         preprints,
         brand,
+        retraction_watch: `Retraction Watch`,
         brand_name: 'OSF',
         retraction_watch_database: `Retraction Watch Database`,
         browse: `Browse`,
@@ -65,8 +66,8 @@ export default {
             explanation1: `We record instances of scientific retractions from journals and publish them in a comprehensive open database. `,
             explanation2: `We believe that retractions are a real-time window into the self-correcting nature of the scientific process, `,
             explanation3: `and we've learned since starting this project as a `,
-            explanation4: `blog `,
-            explanation5: `in 2010 that they're far more common than we initially thought.`,
+            explanation4: `blog`,
+            explanation5: ` in 2010 that they're far more common than we initially thought.`,
             button: `Browse`
 
         },

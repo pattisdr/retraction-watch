@@ -3,10 +3,5 @@
 
 {{outlet}}
 
-{{#if theme.isProvider}}
-    {{preprint-footer-branded model=theme.provider}}
-{{else}}
-    {{osf-footer}}
-    {{osf-copyright class='text-center'}}
-    {{osf-mode-footer}}
-{{/if}}
+{{retraction-watch-footer}}
+{{osf-mode-footer}}

@@ -52,8 +52,7 @@
     &:hover {
         text-decoration: None;
         color: white;
-        background: #97353a;
-
+        background: #5e2124;
     }
 }
 
@@ -1052,17 +1051,19 @@ nav.branded-navbar {
     box-shadow: 0 0 4px rgba(82, 81, 81, 0.7);
 }
 
-.branded-footer {
-    margin: 2.5em 0;
-
-    p {
-        margin: 0;
+.retraction-watch-footer {
+    padding: 8px;
+    bottom: 0px;
+    width: 100%;
+    background: #5B2023;
+    color: white;
+    a {
+        color: #ffffff;
     }
 }
 
-.branded-footer-links {
-    margin-bottom: 1em;
-    line-height: 28px;
+.retraction-watch-footer-links {
+    line-height: 15px;
 
     div {
         display: inline-block;
