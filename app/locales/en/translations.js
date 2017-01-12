@@ -32,10 +32,8 @@ export default {
     },
     discover: {
         search: {
-            heading: `Preprint Archive Search`,
             paragraph: `powered by`,
-            partner: `Partner Repositories`,
-            placeholder: `Search preprints...`
+            placeholder: `Search retraction database...`
         },
         sort_by: `Sort by`,
         main: {
@@ -44,12 +42,15 @@ export default {
                 button: `Clear filters`
             },
             refine: `Refine your search by`,
-            providers: `Providers`,
+            date: `Date`,
+            type: `Type`,
             subject: `Subject`,
-            box: {
-                paragraph: `Do you want to add your own research as a preprint?`,
-                button: `Add your preprint`
-            },
+            publisher: `Publisher`,
+            funder: `Funder`,
+            institution: `Institution`,
+            organization: `Organization`,
+            language: `Language`,
+            people: `People`,
             results: {
                 of: `of`,
                 no_results: `Try broadening your search terms`

@@ -137,6 +137,53 @@ a.blog_link {
     list-style-type: none;
 }
 
+/* SEARCH page */
+/* Global to search */
+.retraction-watch-search-main {
+    background-color: #fbfbfb;
+    border-bottom: 1px solid #dedede;
+    .filter-heading {
+        background-color: #5B2023;
+        color:white;
+        text-align: center;
+    }
+    label {
+        font-weight: normal;
+    }
+    .preprint-search-sidebar ul {
+        padding-left: 25px;
+        li {
+            list-style: none;
+        }
+    }
+    .search-result {
+        margin-bottom: 10px;
+        word-wrap: break-word;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        box-shadow : 0 1px 2px #ddd;
+        border: none;
+        h4 {
+            font-weight: normal;
+        }
+    }
+}
+
+/* Header panel */
+.retraction-watch-search-header {
+    padding-top: 120px;
+    background: white;
+    background-size: cover;
+    .share-logo {
+        width: 46px;
+        height: 22px;
+        background: url('img/share-logo-icon.png') no-repeat;
+        display: inline-block;
+        background-size: contain;
+        vertical-align: middle;
+    }
+}
+
 /* GLOBAL to PREPRINTS, these may be used in multiple pages */
 .pointer {
     cursor: pointer;
@@ -236,53 +283,6 @@ $logo-dir: 'img/provider_logos/';
     }
     .provider-logo {
         margin-bottom: 15px;
-    }
-}
-
-
-/* SEARCH page */
-/* Global to search */
-
-
-/* Header panel */
-.preprint-search-header {
-    padding-top: 120px;
-    background: #e0ebef url('img/search-bg.jpg') top center;
-    background-size: cover;
-    .share-logo {
-        width: 46px;
-        height: 22px;
-        background: url('img/share-logo-icon.png') no-repeat;
-        display: inline-block;
-        background-size: contain;
-        vertical-align: middle;
-    }
-}
-.preprint-search-main {
-    background-color: #fbfbfb;
-    border-bottom: 1px solid #dedede;
-    .filter-heading {
-        background-color: #efefef;
-    }
-    label {
-        font-weight: normal;
-    }
-    .preprint-search-sidebar ul {
-        padding-left: 25px;
-        li {
-            list-style: none;
-        }
-    }
-    .search-result {
-        margin-bottom: 10px;
-        word-wrap: break-word;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        box-shadow : 0 1px 2px #ddd;
-        border: none;
-        h4 {
-            font-weight: normal;
-        }
     }
 }
 
