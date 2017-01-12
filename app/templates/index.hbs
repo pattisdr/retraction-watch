@@ -1,6 +1,5 @@
 <div class="retraction-watch-page"> {{!INDEX}}
 
-    {{!HEADER}}
     <div class="retraction-watch-header"> {{!HEADER}}
         <div class="container"> {{!CONTAINER}}
             <div class="row">{{!HEADER ROW}}
@@ -46,17 +45,15 @@
     </div> {{!END BROWSE SECTION}}
 
 
-    {{#unless theme.isProvider}}
-        {{!BLOG POSTS}}
-        <div class="p-v-md">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h2 class="blog-post-heading">{{t "index.latest_blog_post"}}</h2>
-                    </div>
+
+    <div class="p-v-md"> {{!BLOG POST}}
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 class="blog-post-heading">{{t "index.latest_blog_post"}}</h2>
                 </div>
             </div>
         </div>
-    {{/unless}} {{!END BLOG POSTS}}
+    </div> {{!END BLOG POST}}
 
 </div> {{!END INDEX}}

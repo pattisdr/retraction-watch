@@ -1,16 +1,5 @@
-{{#if theme.isProvider}}
-    {{title (concat theme.provider.name ' Preprints') separator=' | '}}
-    {{#if theme.stylesheet}}
-        <style>
-            @import url('{{theme.stylesheet}}');
-        </style>
-    {{/if}}
-    {{preprint-navbar-branded model=theme.provider}}
-{{else}}
-    {{title 'OSF Preprints' separator=' | '}}
-    {{osf-navbar signupUrl=theme.signupUrl loginAction=(action 'login') hideSearch=true}}
-    {{preprint-navbar}}
-{{/if}}
+{{title 'Retraction Watch' separator=' | '}}
+{{retraction-watch-navbar}}
 
 {{outlet}}
 
