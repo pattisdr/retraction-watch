@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CenterForOpenScience/ember-preprints.git"
+    "url": "git+https://github.com/pattisdr/retraction-watch.git"
   },
   "engines": {
     "node": ">= 0.10.0"
@@ -58,7 +58,7 @@
     "ember-link-action": "0.0.35",
     "ember-load-initializers": "^0.5.1",
     "ember-metrics": "0.6.3",
-    "ember-osf": "git+https://github.com/CenterForOpenScience/ember-osf.git#db96ee083e439ba26b4f62320a4482967b11d1aa",
+    "ember-osf": "../../em-osf/ember-osf",
     "ember-page-title": "3.0.6",
     "ember-power-select": "1.0.0-beta.7",
     "ember-read-more": "0.0.13",

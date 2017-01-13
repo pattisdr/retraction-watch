@@ -1,10 +1,12 @@
-import { safeMarkup } from 'preprint-service/helpers/safe-markup';
+
+import { htmlSafe } from 'preprint-service/helpers/html-safe';
 import { module, test } from 'qunit';
 
-module('Unit | Helper | safe markup');
+module('Unit | Helper | html safe');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  let result = safeMarkup([42]);
+  let result = htmlSafe([42]);
   assert.ok(result);
 });
+

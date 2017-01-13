@@ -7,6 +7,7 @@ module.exports = function(environment) {
         modulePrefix: 'preprint-service',
         environment: environment,
         rootURL: '/',
+        feedURL: 'http://retractionwatch.com/feed/',
         locationType: 'auto',
         authorizationType: authorizationType,
         sentryDSN: 'http://test@localhost/80' || process.env.SENTRY_DSN,

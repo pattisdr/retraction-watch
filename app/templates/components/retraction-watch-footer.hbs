@@ -1,0 +1,46 @@
+<div class="retraction-watch-footer">
+    <div class="container">
+        <div class="row p-t-xs">
+            <div class="col-xs-12">
+                <div class="text-center retraction-watch-footer-links">
+                    <div>
+                        <span>{{t "global.retraction_watch"}}: </span>
+                        <span>
+                            <a href="mailto:{{if model.emailSupport model.emailSupport (concat 'support+' model.id '@osf.io')}}"
+                               onbeforeclick={{action 'click' 'link' 'Branded Footer - Support'}}
+                            >
+                                {{t "components.preprint-footer-branded.support"}}
+                            </a>
+                        </span>
+                        <span> | </span>
+                        <span>
+                            <a href="mailto:retractionwatchteam@gmail.com"
+                               onbeforeclick={{action 'click' 'link' 'Branded Footer - Contact'}}
+                            >
+                                {{t "components.preprint-footer-branded.contact"}}
+                            </a>
+                        </span>
+                        <span> | </span>
+                    </div>
+                    <div class="social">
+                        {{!TWITTER}}
+                        <a href="https://twitter.com/RetractionWatch"
+                           aria-label={{t "components.preprint-footer-branded.twitter"}}
+                           onbeforeclick={{action 'click' 'link' 'RW Footer - Twitter'}}
+                        >
+                            <i class="fa fa-2x fa-twitter"></i>
+                        </a>
+                        {{!FACEBOOK}}
+                        <a href="https://www.facebook.com/retractionwatch"
+                           aria-label={{t "components.preprint-footer-branded.facebook"}}
+                           onbeforeclick={{action 'click' 'link' 'RW Footer - Facebook'}}
+                        >
+                            <i class="fa fa-2x fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+                {{osf-copyright class='text-center'}}
+            </div>
+        </div>
+    </div>
+</div>

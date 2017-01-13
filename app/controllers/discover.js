@@ -19,8 +19,8 @@ export default Ember.Controller.extend(Analytics, {
     queryParams: {
         page: 'page',
         queryString: 'q',
-        subjectFilter: 'subject',
-        providerFilter: 'provider',
+        // subjectFilter: 'subject',
+        // providerFilter: 'provider',
     },
 
     activeFilters: { providers: [], subjects: [] },
@@ -124,27 +124,27 @@ export default Ember.Controller.extend(Analytics, {
 
         this.loadPage();
     },
-    subjectChanged: Ember.observer('subjectFilter', function() {
-        Ember.run.once(() => {
-            let filter = this.get('subjectFilter');
-            if (!filter || filter === 'true') return;
-            this.set('activeFilters.subjects', filter.split('AND'));
-            this.notifyPropertyChange('activeFilters');
-            this.loadPage();
-        });
-    }),
-    providerChanged: Ember.observer('providerFilter', function() {
-        if (!this.get('theme.isProvider')) {
-            Ember.run.once(() => {
-                let filter = this.get('providerFilter');
-                if (!filter || filter === 'true') return;
-                this.set('activeFilters.providers', filter.split('AND'));
-                this.notifyPropertyChange('activeFilters');
-                this.set('providersPassed', true);
-                this.loadPage();
-            });
-        }
-    }),
+    // subjectChanged: Ember.observer('subjectFilter', function() {
+    //     Ember.run.once(() => {
+    //         let filter = this.get('subjectFilter');
+    //         if (!filter || filter === 'true') return;
+    //         this.set('activeFilters.subjects', filter.split('AND'));
+    //         this.notifyPropertyChange('activeFilters');
+    //         this.loadPage();
+    //     });
+    // }),
+    // providerChanged: Ember.observer('providerFilter', function() {
+    //     if (!this.get('theme.isProvider')) {
+    //         Ember.run.once(() => {
+    //             let filter = this.get('providerFilter');
+    //             if (!filter || filter === 'true') return;
+    //             this.set('activeFilters.providers', filter.split('AND'));
+    //             this.notifyPropertyChange('activeFilters');
+    //             this.set('providersPassed', true);
+    //             this.loadPage();
+    //         });
+    //     }
+    // }),
     loadPage() {
         this.set('loading', true);
         Ember.run.debounce(this, this._loadPage, 500);

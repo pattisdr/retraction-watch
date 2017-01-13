@@ -2,9 +2,172 @@
 @import 'ember-power-select';
 @import 'base';
 @import 'variables';
-@import 'authors';
 @import 'validated-input';
 @import 'hint';
+
+/* INDEX page */
+/* Global to index */
+
+/* Main header with search bar */
+.retraction-watch-header{
+    background: white;
+    padding-top: 125px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #dddddd;
+    color: white;
+    h1 {
+        font-size: 41px;
+        font-weight: 300;
+    }
+    a:not(.btn) {
+        color: #80c2f7;
+        text-decoration: underline;
+    }
+    .btn-info {
+        color: #fff
+    }
+
+}
+
+.retraction-watch-brand {
+    background: url('img/retraction-watch-logo.png') top center no-repeat;
+    height: 175px;
+    background-size: contain;
+}
+
+.retraction-watch-browse-button {
+    background: #5B2023;
+    color: white;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    padding: 10px;
+    padding-left: 70px;
+    padding-right: 70px;
+    &:link {
+        color: white;
+    }
+    &:visited {
+        color: white;
+    }
+    &:hover {
+        text-decoration: None;
+        color: white;
+        background: #2E5374;
+    }
+}
+
+.blog-loading {
+    color: #2E5374;
+}
+
+.badge {
+    background: #2E5374 !important;
+}
+
+.retraction-watch-explanation {
+    color: #5B2023;
+    text-align: center;
+    font-size: 1.35em;
+}
+
+a.blog_link {
+    text-decoration: underline;
+    &:link {
+        color: #5B2023;
+    }
+    &:visited {
+        color: #5B2023;
+    }
+    &:hover {
+        color: #2E5374;
+    }
+    display: inline-block;
+}
+
+/* Browse Retraction Watch */
+.browse-retraction-watch {
+    background-color: #f1f3f2;
+    border-bottom: 1px solid #DDDDDD;
+    .subject-item a {
+        width: 100%;
+        font-size: 17px;
+    }
+}
+
+.blog-post-heading {
+    color: #5B2023;
+}
+
+/* Retraction Watch navbar */
+.retraction-watch-navbar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    padding: 0;
+    background: #5B2023;
+    z-index: 99;
+    box-shadow: 0 0 4px #525151;
+    border-radius: 0;
+    a {
+        color: #ffffff;
+    }
+    .nav > li > a:hover, .nav > li > a.active, .navbar-brand:hover {
+        background-color: #5B2023;
+        color: #a4c1db;
+
+    }
+    .nav > li > a:focus:not(.active) {
+        background-color: transparent;
+    }
+    .navbar-brand a {
+        text-decoration: none;
+    }
+    .navbar-brand a:hover {
+        text-decoration: none;
+    }
+    .navbar-toggle {
+        color: #eeeeee;
+    }
+}
+
+#retraction-watch-navbar-links {
+    a:hover {
+        color: #a4c1db;
+    }
+}
+
+.individual-blog-links a {
+    color: #2E5374;
+    line-height: 10px;
+}
+
+.blog-posts-block {
+    border-left: 1px solid #2E5374;
+}
+
+.blog-title a {
+    color: #5B2023;
+    text-decoration: none;
+    &:hover {
+        color: #2E5374;
+    }
+}
+
+
+.retraction-watch-footer {
+    padding: 8px;
+    bottom: 0px;
+    width: 100%;
+    background: #5B2023;
+    color: white;
+    a {
+        color: #ffffff;
+        &:hover {
+            color: #a4c1db;
+            text-decoration: None;
+        }
+    }
+}
 
 /* Override styles from ember-osf and osf */
 .footer {
@@ -20,6 +183,92 @@
     padding: 0;
     margin: 0;
     list-style-type: none;
+}
+
+/* SEARCH page */
+/* Global to search */
+.retraction-watch-search-main {
+    background-color: #fbfbfb;
+    border-bottom: 1px solid #dedede;
+    .filter-heading {
+        background-color: #5B2023;
+        color:white;
+        text-align: center;
+    }
+    label {
+        font-weight: normal;
+    }
+    .preprint-search-sidebar ul {
+        padding-left: 25px;
+        li {
+            list-style: none;
+        }
+    }
+    .search-result {
+        margin-bottom: 10px;
+        word-wrap: break-word;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        box-shadow : 0 1px 2px #ddd;
+        border: none;
+        h4 {
+            font-weight: normal;
+        }
+    }
+}
+
+/* Header panel */
+.retraction-watch-search-header {
+    padding-top: 120px;
+    background: white;
+    background-size: cover;
+    .share-logo {
+        width: 46px;
+        height: 22px;
+        background: url('img/share-logo-icon.png') no-repeat;
+        display: inline-block;
+        background-size: contain;
+        vertical-align: middle;
+    }
+}
+
+.copyright {
+    color: white;
+    a:hover {
+        text-decoration: None;
+        color: #a4c1db;
+    }
+}
+
+.retraction-filters {
+    background: #2E5374;
+    color: white;
+    padding: 3px;
+    text-align: center;
+    border: 1px solid #CCCCCC
+
+}
+
+
+.retraction-watch-footer-links {
+    line-height: 15px;
+    color: white;
+    a:hover {
+        color: #a4c1db;
+    }
+
+    div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .social > a {
+        margin: 0 4px;
+    }
+
+    .social > a:hover {
+        text-decoration: none;
+    }
 }
 
 /* GLOBAL to PREPRINTS, these may be used in multiple pages */
@@ -55,95 +304,17 @@ ul.comma-list {
     padding: 1px 7px;
     margin-bottom: 4px;
 }
-
-.preprint-brand {
-    background: url('img/preprints-logo.png') top center no-repeat;
-    height: 70px;
-    background-size: contain;
-}
-
-
-/* Preprint navbar */
-.preprint-navbar {
-    position: fixed;
-    top: 51px;
-    width: 100%;
-    padding: 0;
-    background: #578CA2;
-    z-index: 99;
-    box-shadow: 0 0 4px #525151;
-    border-radius: 0;
-    a {
-        color: #ffffff;
-    }
-    .nav > li > a:hover, .nav > li > a.active, .navbar-brand:hover {
-        background-color: #65a0b9;
-    }
-    .nav > li > a:focus:not(.active) {
-        background-color: transparent;
-    }
-    .navbar-brand a {
-        text-decoration: none;
-    }
-    .navbar-brand a:hover {
-        text-decoration: none;
-    }
-    .navbar-toggle {
-        color: #eeeeee;
-    }
-}
-
 /* This should be a temporary adjustment */
 @media (max-width: 768px) {
     .preprint-navbar {
         top: 50px;
     }
 }
-/* INDEX page */
-/* Global to index */
-
-
-/* Main header with search bar */
-.preprint-header{
-    background:#214661 url('img/preprints-bg.jpg') top center ;
-    padding-top: 150px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #dddddd;
-    color: white;
-    h1 {
-        font-size: 41px;
-        font-weight: 300;
-    }
-    a:not(.btn) {
-        color: #80c2f7;
-        text-decoration: underline;
-    }
-    .btn-info {
-        color: #fff
-    }
-
-}
-
-.preprint-lead,
-.preprint-tool h2
-{
-    text-transform: capitalize;
-}
 
 /* Recent uploads list panel */
 .preprint-list {
     background: #fbfbfb;
     border-bottom: 1px solid #eee;
-}
-
-/* Subject Panel */
-.preprint-subjects {
-    background-color: #f1f3f2;
-    border-bottom: 1px solid #6d8a98;;
-    .subject-item a {
-        width: 100%;
-        font-size: 17px;
-    }
 }
 
 /* Preprint providers and become provider */
@@ -190,18 +361,6 @@ $logo-dir: 'img/provider_logos/';
     background-image: url($logo-dir + 'psyarxiv-dark-small.png');
 }
 
-.preprint-advisory  {
-    background-color: #f3f5f7;
-    border-bottom: 1px solid #e0e6ea;
-    ul {
-        list-style: none;
-        li {
-            padding-top: 5px;
-            font-size: 16px;
-        }
-    }
-}
-
 @media (max-width: 768px) {
     .subject-item {
         margin-bottom: 5px;
@@ -211,53 +370,6 @@ $logo-dir: 'img/provider_logos/';
     }
     .provider-logo {
         margin-bottom: 15px;
-    }
-}
-
-
-/* SEARCH page */
-/* Global to search */
-
-
-/* Header panel */
-.preprint-search-header {
-    padding-top: 120px;
-    background: #e0ebef url('img/search-bg.jpg') top center;
-    background-size: cover;
-    .share-logo {
-        width: 46px;
-        height: 22px;
-        background: url('img/share-logo-icon.png') no-repeat;
-        display: inline-block;
-        background-size: contain;
-        vertical-align: middle;
-    }
-}
-.preprint-search-main {
-    background-color: #fbfbfb;
-    border-bottom: 1px solid #dedede;
-    .filter-heading {
-        background-color: #efefef;
-    }
-    label {
-        font-weight: normal;
-    }
-    .preprint-search-sidebar ul {
-        padding-left: 25px;
-        li {
-            list-style: none;
-        }
-    }
-    .search-result {
-        margin-bottom: 10px;
-        word-wrap: break-word;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        box-shadow : 0 1px 2px #ddd;
-        border: none;
-        h4 {
-            font-weight: normal;
-        }
     }
 }
 
@@ -336,87 +448,6 @@ ul.preprints-block-list {
         }
     }
 }
-
-/* SUBMIT page */
-
-.preprint-submit-header {
-    padding-top: 140px;
-    background: url("img/submit_bg.jpg") no-repeat top center;
-    background-size: cover;
-    border-bottom: 1px solid #eee;
-    height: 250px;
-}
-.preprint-submit-body {
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #dddddd;
-    padding-bottom: 50px;
-}
-
-.preprint-form-block {
-    margin-top: 20px;
-    background: #fff;
-    padding:10px 20px 20px 20px;
-    box-shadow: 0 0 3px #ddd;
-    label {
-        width: 100%;
-    }
-    .preprint-header-preview {
-        color: #444;
-        font-size: 15px;
-        i {
-            color: #888;
-            display: block;
-        }
-        .abstract {
-            white-space: pre-line;
-        }
-    }
-}
-#preprint-form-upload {
-    .btn-big {
-        height: 80px;
-        font-size: 16px;
-        background-color: #eef2f3;
-        white-space: normal;
-    }
-    .dropzone {
-        background-color: #f8f8f8;
-        border: 2px dashed #ddd;
-        margin-bottom: 20px;
-        margin-top: 10px;
-        text-align: center;
-    }
-    .dz-progress {
-        z-index : 10;
-    }
-
-    .dropzone.dz-started .dz-message {
-        opacity: 1; // Override default to keep from disappearing
-        margin-top: 0;
-        margin-bottom: 0;
-        display: block;
-    }
-
-    .dropzone.dz-drag-hover {
-        border-color: #95cd7e;
-    }
-
-    .radio-option {
-        background: #f5f5f5;
-        border-radius: 2px;
-    }
-}
-.file-browser-header {
-    display: none;
-}
-.file-browser {
-    border: 1px solid #ddd;
-    margin: 10px;
-}
-.ball-pulse>div {
-    background-color: #b9cdd6;
-}
-
 
 /* Not found page */
 .preprint-404 {
@@ -804,8 +835,6 @@ hr {
     }
 }
 
-#preprint-form-authors {}
-
 #preprint-form-submit {
 
 }
@@ -914,10 +943,6 @@ hr {
     height: 34px;
 }
 
-.source_code_link {
-    color: white;
-    text-decoration: underline;
-}
 
 .taxonomy-show-children {
     margin-right: 2px;
@@ -1044,22 +1069,6 @@ label.title-label {
     cursor: default;
 }
 
-// Narrow views for submit
-@media (max-width: 768px) {
-    #preprint-form-upload .btn-big {
-        min-height: 100px;
-        font-size: 14px;
-    }
-    .toggle-button label.choose-large i {
-        font-size: 35px;
-    }
-    .panel-body {
-        padding: 0;
-    }
-    .table > tbody > tr > td {
-         padding: 2px;
-    }
-}
 
 .lock-span {
     display: inline-block;
@@ -1127,30 +1136,4 @@ nav.preprint-navbar {
 
 nav.branded-navbar {
     box-shadow: 0 0 4px rgba(82, 81, 81, 0.7);
-}
-
-.branded-footer {
-    margin: 2.5em 0;
-
-    p {
-        margin: 0;
-    }
-}
-
-.branded-footer-links {
-    margin-bottom: 1em;
-    line-height: 28px;
-
-    div {
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    .social > a {
-        margin: 0 4px;
-    }
-
-    .social > a:hover {
-        text-decoration: none;
-    }
 }
