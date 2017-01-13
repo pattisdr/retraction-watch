@@ -34,7 +34,8 @@ export default {
     discover: {
         search: {
             paragraph: `powered by`,
-            placeholder: `Search retraction database...`
+            placeholder: `Search retraction database...`,
+            placeholder_short: `Search retractions...`,
         },
         sort_by: `Sort by`,
         main: {
