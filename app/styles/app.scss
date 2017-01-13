@@ -137,6 +137,14 @@ a.blog_link {
     border-left: 1px solid #2E5374;
 }
 
+.blog-title a {
+    color: #2E5374;
+    text-decoration: none;
+    &:hover {
+        color: #5B2023;
+    }
+}
+
 
 .retraction-watch-footer {
     padding: 8px;

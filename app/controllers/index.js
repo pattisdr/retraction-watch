@@ -17,10 +17,16 @@ export default Ember.Controller.extend(Analytics, {
             let attributes = [];
             for (var i = 0; i < this.get('numPosts'); i++) {
                 let entry = results.getElementsByTagName('item')[i];
+                let descriptionXMLString = entry.getElementsByTagName('description')[0].textContent,
+                    parser = new DOMParser(),
+                    doc = parser.parseFromString(descriptionXMLString,"text/xml");
+
                 attributes.push({
                     title: entry.getElementsByTagName('title')[0].textContent,
-                    description: entry.getElementsByTagName('description')[0].textContent,
-                    author: entry.getElementsByTagName('creator')[0].textContent
+                    description: doc.getElementsByTagName('p')[0].childNodes[1].textContent, //Get parse error here, not reliable.
+                    author: entry.getElementsByTagName('creator')[0].textContent,
+                    link: entry.getElementsByTagName('link')[0].textContent,
+                    date: entry.getElementsByTagName('pubDate')[0].textContent
                 });
             }
             this.set('blogAttributes', attributes);

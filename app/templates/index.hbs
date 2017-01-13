@@ -55,8 +55,13 @@
                         <div class="col-xs-12 col-sm-8 col-sm-offset-2 blog-posts-block">
                             {{#each blogAttributes as |entry|}} {{!Individual Blog Entries}}
                                 <div class="p-b-sm">
-                                    <h3 class="blog-title"> {{entry.title}} </h3>
+                                    <h3 class="blog-title">
+                                        <a href={{entry.link}}>
+                                            {{entry.title}}
+                                        </a>
+                                    </h3>
                                     <h4> <em>{{entry.author}}</em></h4>
+                                    <h5> {{moment-format entry.date}}</h5>
                                     <p class="individual-blog-links"> {{html-safe entry.description}} </p>
                                 </div>
                             {{/each}}
