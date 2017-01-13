@@ -52,7 +52,7 @@
     &:hover {
         text-decoration: None;
         color: white;
-        background: #97353a;
+        background: #2E5374;
     }
 }
 
@@ -71,7 +71,7 @@ a.blog_link {
         color: #5B2023;
     }
     &:hover {
-        color: #97353a;
+        color: #2E5374;
 
     }
 }
@@ -105,7 +105,7 @@ a.blog_link {
     }
     .nav > li > a:hover, .nav > li > a.active, .navbar-brand:hover {
         background-color: #5B2023;
-        color: #8C9398;
+        color: #a4c1db;
 
     }
     .nav > li > a:focus:not(.active) {
@@ -124,7 +124,7 @@ a.blog_link {
 
 #retraction-watch-navbar-links {
     a:hover {
-        color: #5B2023;
+        color: #a4c1db;
     }
 }
 
@@ -132,6 +132,21 @@ a.blog_link {
      color: #2E5374;
 }
 
+
+.retraction-watch-footer {
+    padding: 8px;
+    bottom: 0px;
+    width: 100%;
+    background: #5B2023;
+    color: white;
+    a {
+        color: #ffffff;
+        &:hover {
+            color: #a4c1db;
+            text-decoration: None;
+        }
+    }
+}
 
 /* Override styles from ember-osf and osf */
 .footer {
@@ -193,6 +208,45 @@ a.blog_link {
         display: inline-block;
         background-size: contain;
         vertical-align: middle;
+    }
+}
+
+.copyright {
+    color: white;
+    a:hover {
+        text-decoration: None;
+        color: #a4c1db;
+    }
+}
+
+.retraction-filters {
+    background: #2E5374;
+    color: white;
+    padding: 3px;
+    text-align: center;
+    border: 1px solid #CCCCCC
+
+}
+
+
+.retraction-watch-footer-links {
+    line-height: 15px;
+    color: white;
+    a:hover {
+        color: #a4c1db;
+    }
+
+    div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .social > a {
+        margin: 0 4px;
+    }
+
+    .social > a:hover {
+        text-decoration: none;
     }
 }
 
@@ -1061,32 +1115,4 @@ nav.preprint-navbar {
 
 nav.branded-navbar {
     box-shadow: 0 0 4px rgba(82, 81, 81, 0.7);
-}
-
-.retraction-watch-footer {
-    padding: 8px;
-    bottom: 0px;
-    width: 100%;
-    background: #5B2023;
-    color: white;
-    a {
-        color: #ffffff;
-    }
-}
-
-.retraction-watch-footer-links {
-    line-height: 15px;
-
-    div {
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    .social > a {
-        margin: 0 4px;
-    }
-
-    .social > a:hover {
-        text-decoration: none;
-    }
 }
