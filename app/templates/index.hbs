@@ -63,6 +63,9 @@
                                     <h4> <em>{{entry.author}}</em></h4>
                                     <h5> {{moment-format entry.date}}</h5>
                                     <p class="individual-blog-links"> {{html-safe entry.description}} </p>
+                                    {{#each entry.categories as |category|}}
+                                        <span class="badge">{{category}}</span>
+                                    {{/each}}
                                 </div>
                             {{/each}}
                         </div>
