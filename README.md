@@ -27,6 +27,7 @@ For local development, this is designed to run alongside (and from within) the f
 1. Check out this OSF feature branch: https://github.com/pattisdr/retraction-watch.git
 2. Start your Ember server: `ember serve`
 3. Copy these lines to your `website/settings/local.py` file and restart your flask app.
+```python
     USE_EXTERNAL_EMBER = True
     EXTERNAL_EMBER_APPS = {
         'retraction-watch': {
@@ -35,6 +36,7 @@ For local development, this is designed to run alongside (and from within) the f
             'path': '../retraction-watch/dist/'
         }
     }
+```
 4. Visit your app at http://localhost:5000/retraction-watch/ (temporary URL)
 
 If you encounter problems, make sure that your version of ember-osf is up to date. If login fails, try logging in from 
