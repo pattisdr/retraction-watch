@@ -46,28 +46,24 @@
 
 
 
-    <div class="p-v-md"> {{!BLOG POST}}
-        <div class="container">
+    <div class="p-v-md"> {{!BLOG POSTS}}
+        <div class="container p-b-lg">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 class="blog-post-heading">{{t "index.latest_blog_posts"}}</h2>
-
+                    <h2 class="blog-post-heading">{{t "index.latest_blog_posts"}}</h2> {{! Latest Posts}}
                     <div class="row">
                         <div class="col-xs-10 col-xs-offset-1">
-                            <h3> {{entryTitle1}} </h3>
-                            <p> {{html-safe entryDescription1}} </p>
-
-                            <h3> {{entryTitle2}} </h3>
-                            <p> {{html-safe entryDescription2}} </p>
-
-                            <h3> {{entryTitle3}} </h3>
-                            <p> {{html-safe entryDescription3}} </p>
+                            {{#each blogAttributes as |entry|}} {{!Individual Blog Entries}}
+                                <div class="p-v-xs">
+                                   <h3> {{entry.title}} </h3>
+                                    <p> {{html-safe entry.description}} </p>
+                                </div>
+                            {{/each}}
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-    </div> {{!END BLOG POST}}
+    </div> {{!END BLOG POSTS}}
 
 </div> {{!END INDEX}}

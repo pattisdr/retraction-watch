@@ -1,32 +1,12 @@
 import Ember from 'ember';
-import config from 'ember-get-config';
+// import config from 'ember-get-config'; // Restore after CORS issues resolved
 import Analytics from '../mixins/analytics';
 
 export default Ember.Controller.extend(Analytics, {
-    entryTitle1: null,
-    entryDescription1: null,
-    entryTitle2: null,
-    entryDescription2: null,
-    entryTitle3: null,
-    entryDescription3: null,
-    attributes: [
-        {
-            title: 'entryTitle1',
-            description: 'entryDescription1',
-        },
-         {
-            title: 'entryTitle2',
-            description: 'entryDescription2',
-        },
-         {
-            title: 'entryTitle3',
-            description: 'entryDescription3',
-        }
-
-    ],
+    blogAttributes: [],
+    numPosts: 3,
     init() {
-        // Fetch latest retraction watch blog post.
-
+        // Fetch latest retraction watch blog posts.
         Ember.$.ajax({
             type: 'GET',
             // url: config.feedURL,
@@ -34,13 +14,15 @@ export default Ember.Controller.extend(Analytics, {
             contentType: 'application/rss+xml',
         })
         .then(results => {
-            let index = 0
-            for (const {title, description} of this.get('attributes')) {
-                let entry = results.getElementsByTagName('item')[index];
-                this.set(title, entry.getElementsByTagName('title')[0].textContent);
-                this.set(description, entry.getElementsByTagName('description')[0].textContent);
-                index += 1;
+            let attributes = [];
+            for (var i = 0; i < this.get('numPosts'); i++) {
+                let entry = results.getElementsByTagName('item')[i];
+                attributes.push({
+                    title: entry.getElementsByTagName('title')[0].textContent,
+                    description: entry.getElementsByTagName('description')[0].textContent
+                });
             }
+            this.set('blogAttributes', attributes);
         });
     },
 });
