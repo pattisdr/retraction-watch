@@ -19,7 +19,8 @@ export default Ember.Controller.extend(Analytics, {
                 let entry = results.getElementsByTagName('item')[i];
                 attributes.push({
                     title: entry.getElementsByTagName('title')[0].textContent,
-                    description: entry.getElementsByTagName('description')[0].textContent
+                    description: entry.getElementsByTagName('description')[0].textContent,
+                    author: entry.getElementsByTagName('creator')[0].textContent
                 });
             }
             this.set('blogAttributes', attributes);

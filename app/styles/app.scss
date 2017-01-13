@@ -129,7 +129,12 @@ a.blog_link {
 }
 
 .individual-blog-links a {
-     color: #2E5374;
+    color: #2E5374;
+    line-height: 10px;
+}
+
+.blog-posts-block {
+    border-left: 1px solid #2E5374;
 }
 
 
