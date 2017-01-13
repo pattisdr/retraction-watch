@@ -56,6 +56,10 @@
     }
 }
 
+.blog-loading {
+    color: #2E5374;
+}
+
 .badge {
     background: #2E5374 !important;
 }
@@ -142,10 +146,10 @@ a.blog_link {
 }
 
 .blog-title a {
-    color: #2E5374;
+    color: #5B2023;
     text-decoration: none;
     &:hover {
-        color: #5B2023;
+        color: #2E5374;
     }
 }
 

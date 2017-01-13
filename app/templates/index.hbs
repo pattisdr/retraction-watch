@@ -51,25 +51,32 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h2 class="blog-post-heading">{{t "index.latest_blog_posts"}}</h2> {{! Latest Posts}}
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-8 col-sm-offset-2 blog-posts-block">
-                            {{#each blogAttributes as |entry|}} {{!Individual Blog Entries}}
-                                <div class="p-b-sm">
-                                    <h3 class="blog-title">
-                                        <a href={{entry.link}}>
-                                            {{entry.title}}
-                                        </a>
-                                    </h3>
-                                    <h4> <em>{{entry.author}}</em></h4>
-                                    <h5> {{moment-format entry.date}}</h5>
-                                    <p class="individual-blog-links"> {{html-safe entry.description}} </p>
-                                    {{#each entry.categories as |category|}}
-                                        <span class="badge">{{category}}</span>
-                                    {{/each}}
-                                </div>
-                            {{/each}}
+                    {{#if (not blogAttributes)}} {{! Until blog posts have loaded}}
+                        <div class="p-v-md text-center blog-loading">
+                            {{fa-icon 'spinner' pulse=true size=4}}
                         </div>
-                    </div>
+                    {{else}}
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-8 col-sm-offset-2 blog-posts-block">
+                                {{debugger}}
+                                {{#each blogAttributes as |entry|}} {{!Individual Blog Entries}}
+                                    <div class="p-b-sm">
+                                        <h3 class="blog-title">
+                                            <a href={{entry.link}}>
+                                                {{entry.title}}
+                                            </a>
+                                        </h3>
+                                        <h4> <em>{{entry.author}}</em></h4>
+                                        <h5> {{moment-format entry.date}}</h5>
+                                        <p class="individual-blog-links"> {{html-safe entry.description}} </p>
+                                        {{#each entry.categories as |category|}}
+                                            <span class="badge">{{category}}</span>
+                                        {{/each}}
+                                    </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    {{/if}}
                 </div>
             </div>
         </div>

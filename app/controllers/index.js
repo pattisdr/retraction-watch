@@ -26,9 +26,9 @@ export default Ember.Controller.extend(Analytics, {
             let attributes = [];
             for (var i = 0; i < this.get('numPosts'); i++) {
                 const entry = results.getElementsByTagName('item')[i];
-                const descriptionXMLString = entry.getElementsByTagName('description')[0].textContent,
-                    parser = new DOMParser(),
-                    doc = parser.parseFromString(descriptionXMLString,"text/xml");
+                const descriptionXMLString = entry.getElementsByTagName('description')[0].textContent;
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(descriptionXMLString, 'text/xml');
 
                 attributes.push({
                     title: entry.getElementsByTagName('title')[0].textContent,
