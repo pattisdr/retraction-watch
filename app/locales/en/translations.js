@@ -29,6 +29,7 @@ export default {
         no_results_found: `No results found.`,
         authors: `Authors`,
         open_science_framework: `Open Science Framework`,
+        retraction: `Retraction`
     },
     discover: {
         search: {
@@ -72,7 +73,7 @@ export default {
             button: `Browse`
 
         },
-        latest_blog_post: `Latest blog post`,
+        latest_blog_posts: `Latest blog posts`,
     },
     'page-not-found': {
         heading: `Page not found`,

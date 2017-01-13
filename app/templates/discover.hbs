@@ -76,23 +76,15 @@
                 <h4>{{t "discover.main.refine"}}</h4> {{!Refine Search}}
                 <div class='m-v-md'>
                     <h4 class="filter-heading p-sm">{{t "discover.main.date"}}</h4> {{!Filter by date}}
-                    <ul>
-                        {{#each otherProviders as |item|}}
-                            <li>
-                                <label>
-                                    <input type="checkbox" checked="{{if (if-filter item.key activeFilters.providers) 'checked'}}" onclick={{action 'updateFilters' 'providers' item.key}} disabled={{theme.isProvider}}>
-                                    {{filter-replace item.key}}
-                                    <small>({{number-format item.doc_count}})</small>
-                                </label>
-                            </li>
-                        {{/each}}
-                        {{#if theme.isProvider}}
-                            <a href="/preprints/discover" onbeforeclick={{action 'click' 'link' 'Discover - Other Preprint Repositories'}}>{{t "discover.main.otherRepositories"}}</a>
-                        {{/if}}
-                    </ul>
+                    <div class="form-group">
+                        <input type="text" onfocus="(this.type='date')" name="Date" class="form-control" placeholder="All time">
+                    </div>
                 </div>
                 <div class="m-t-lg"> {{!Filter by type}}
                     <h4 class="filter-heading p-sm">{{t "discover.main.type"}}</h4>
+                    <div class="retraction-filters pointer disabled">
+                        <h5> {{t "global.retraction"}} </h5>
+                    </div>
                 </div>
                 <div class="m-t-lg"> {{!Filter by subject}}
                     <h4 class="filter-heading p-sm">{{t "discover.main.subject"}}</h4>
