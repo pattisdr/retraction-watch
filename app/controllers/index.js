@@ -3,19 +3,21 @@ import config from 'ember-get-config';
 import Analytics from '../mixins/analytics';
 
 export default Ember.Controller.extend(Analytics, {
-    blog: null,
+    entryTitle: null,
+    entryDescription: null,
     init() {
         // Fetch latest retraction watch blog post.
 
         Ember.$.ajax({
             type: 'GET',
-            url: config.feedURL,
+            // url: config.feedURL,
+            url: 'https://cors-anywhere.herokuapp.com/http://retractionwatch.com/feed', // TEMPORARY UNTIL CORS ISSUES RESOLVED
             contentType: 'application/rss+xml',
-            crossDomain: true,
-            xhrFields: {withCredentials: true}
         })
         .then(results => {
-          this.set('blog', results); // Expand this once CORS issues resolved
+            let latestEntry = results.getElementsByTagName('item')[0];
+            this.set('entryTitle', latestEntry.getElementsByTagName('title')[0].textContent);
+            this.set('entryDescription', latestEntry.getElementsByTagName('description')[0].textContent);
         });
     },
 });
