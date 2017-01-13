@@ -52,7 +52,7 @@
     &:hover {
         text-decoration: None;
         color: white;
-        background: #5e2124;
+        background: #97353a;
     }
 }
 
@@ -105,6 +105,8 @@ a.blog_link {
     }
     .nav > li > a:hover, .nav > li > a.active, .navbar-brand:hover {
         background-color: #5B2023;
+        color: #8C9398;
+
     }
     .nav > li > a:focus:not(.active) {
         background-color: transparent;
@@ -117,6 +119,12 @@ a.blog_link {
     }
     .navbar-toggle {
         color: #eeeeee;
+    }
+}
+
+#retraction-watch-navbar-links {
+    a:hover {
+        color: #8C9398;
     }
 }
 
