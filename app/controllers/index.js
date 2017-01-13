@@ -3,8 +3,27 @@ import config from 'ember-get-config';
 import Analytics from '../mixins/analytics';
 
 export default Ember.Controller.extend(Analytics, {
-    entryTitle: null,
-    entryDescription: null,
+    entryTitle1: null,
+    entryDescription1: null,
+    entryTitle2: null,
+    entryDescription2: null,
+    entryTitle3: null,
+    entryDescription3: null,
+    attributes: [
+        {
+            title: 'entryTitle1',
+            description: 'entryDescription1',
+        },
+         {
+            title: 'entryTitle2',
+            description: 'entryDescription2',
+        },
+         {
+            title: 'entryTitle3',
+            description: 'entryDescription3',
+        }
+
+    ],
     init() {
         // Fetch latest retraction watch blog post.
 
@@ -15,9 +34,13 @@ export default Ember.Controller.extend(Analytics, {
             contentType: 'application/rss+xml',
         })
         .then(results => {
-            let latestEntry = results.getElementsByTagName('item')[0];
-            this.set('entryTitle', latestEntry.getElementsByTagName('title')[0].textContent);
-            this.set('entryDescription', latestEntry.getElementsByTagName('description')[0].textContent);
+            let index = 0
+            for (const {title, description} of this.get('attributes')) {
+                let entry = results.getElementsByTagName('item')[index];
+                this.set(title, entry.getElementsByTagName('title')[0].textContent);
+                this.set(description, entry.getElementsByTagName('description')[0].textContent);
+                index += 1;
+            }
         });
     },
 });
