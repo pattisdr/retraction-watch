@@ -12,7 +12,6 @@ const MAX_SOURCES = 500;
 let filterQueryParams = ['tags', 'sources', 'publishers', 'funders', 'institutions', 'organizations', 'language', 'contributors', 'type'];
 
 export default ApplicationController.extend(Analytics, {
-
     metrics: Ember.inject.service(),
     category: 'discover',
 

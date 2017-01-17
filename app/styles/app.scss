@@ -33,6 +33,22 @@
 
 }
 
+.ember-share-search {
+    .service-logo {
+        background: url('img/retraction-watch-logo.png') top center no-repeat;
+        height: 175px;
+        background-size: contain;
+    }
+    .share-logo {
+        width: 46px;
+        height: 22px;
+        background: url('img/share-logo-icon.png') no-repeat;
+        display: inline-block;
+        background-size: contain;
+        vertical-align: middle;
+    }
+}
+
 .retraction-watch-brand {
     background: url('img/retraction-watch-logo.png') top center no-repeat;
     height: 175px;
