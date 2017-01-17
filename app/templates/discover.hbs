@@ -10,9 +10,9 @@
         <div class="row m-t-sm m-b-lg">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                 <div class="input-group input-group-lg"> {{!SEARCH BOX}}
-                    {{input id="searchBox" value=(mut queryString) class="form-control" key-up='search' placeholder=(t "discover.search.placeholder")}}
+                    {{input id="searchBox" value=q class="form-control" key-up='search' placeholder=(t "discover.search.placeholder")}}
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" {{action "search" this}}>{{t "global.search"}}</button>
+                        <button class="btn btn-default" type="button" {{action "search"}}>{{t "global.search"}}</button>
                     </span>
                 </div>
                 {{!POWERED BY SHARE}}
@@ -24,18 +24,13 @@
         <div class="row m-v-md"> {{!SORT BY}}
             <div class="col-xs-6 col-xs-offset-6">
                 <span class="pull-right">
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="sortBy" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="true" {{action 'click' 'button' 'Retraction Watch - Discover - Sort'}}>
-                            {{t "discover.sort_by"}}: {{chosenSortByOption}}
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="sortBy">
-                            {{#each sortByOptions as |option index|}}
-                                <li style="cursor: pointer; cursor: hand"><a {{action "sortBySelect" index}}>{{option}}</a></li>
-                            {{/each}}
-                        </ul>
-                    </div>
+                    <select
+                        onchange={{action 'selectSortOption' value="target.value"}}
+                        class="btn-select discover-filter-facets">
+                        {{#each sortOptions as |sortChoice|}}
+                            <option value={{sortChoice.sortBy}} selected={{eq sort sortChoice.sortBy}}>{{sortChoice.display}}</option>
+                        {{/each}}
+                    </select>
                 </span>
             </div>
         </div>
@@ -58,19 +53,6 @@
                                 </span>
                             </div>
                         </div>
-                        <div id="activeFiltersList">
-                            {{#each activeFilters.providers as |filter|}}
-                                <span class='preprint-filter provider-filter'>
-                                    {{filter-replace filter}}
-                                    {{#unless theme.isProvider}}
-                                        <span class='pointer'>{{fa-icon 'times-circle' click=(action 'updateFilters' 'providers' filter)}}</span>
-                                    {{/unless}}
-                                </span>
-                            {{/each}}
-                            {{#each activeFilters.subjects as |filter|}}
-                                <span class='preprint-filter subject-filter'>{{filter}} <span class='pointer'>{{fa-icon 'times-circle' click=(action 'updateFilters' 'subjects' filter)}}</span></span>
-                            {{/each}}
-                        </div>
                     </div>
                 {{/if}}
                 <h4>{{t "discover.main.refine"}}</h4> {{!Refine Search}}
@@ -83,40 +65,6 @@
                     facets=facets
                     aggregations=aggregations
                 }}
-                <div class='m-v-md'>
-                    <h4 class="filter-heading p-sm">{{t "discover.main.date"}}</h4> {{!Filter by date}}
-                    <div class="form-group">
-                        <input type="text" onfocus="(this.type='date')" name="Date" class="form-control" placeholder="All time">
-                    </div>
-                </div>
-                <div class="m-t-lg"> {{!Filter by type}}
-                    <h4 class="filter-heading p-sm">{{t "discover.main.type"}}</h4>
-                    <div class="retraction-filters pointer disabled">
-                        <h5> {{t "global.retraction"}} </h5>
-                    </div>
-                </div>
-                <div class="m-t-lg"> {{!Filter by subject}}
-                    <h4 class="filter-heading p-sm">{{t "discover.main.subject"}}</h4>
-                    {{taxonomy-tree select=(action 'updateFilters' 'subjects') subjects=treeSubjects}}
-                </div>
-                <div class="m-t-lg"> {{!Filter by publisher}}
-                    <h4 class="filter-heading p-sm">{{t "discover.main.publisher"}}</h4>
-                </div>
-                <div class="m-t-lg"> {{!Filter by funder}}
-                    <h4 class="filter-heading p-sm">{{t "discover.main.funder"}}</h4>
-                </div>
-                <div class="m-t-lg"> {{!Filter by institution}}
-                    <h4 class="filter-heading p-sm">{{t "discover.main.institution"}}</h4>
-                </div>
-                <div class="m-t-lg"> {{!Filter by organization}}
-                    <h4 class="filter-heading p-sm">{{t "discover.main.organization"}}</h4>
-                </div>
-                <div class="m-t-lg"> {{!Filter by language}}
-                    <h4 class="filter-heading p-sm">{{t "discover.main.language"}}</h4>
-                </div>
-                <div class="m-t-lg"> {{!Filter by people}}
-                    <h4 class="filter-heading p-sm">{{t "discover.main.people"}}</h4>
-                </div>
             </div>
 
             <div class="col-sm-8" id="searchResults"> {{!SEARCH RESULTS - RIGHT PANEL}}
@@ -127,7 +75,7 @@
                 {{else}}
                     {{#if numberOfResults}}
                         {{#each results as |result|}}
-                            {{search-result result=result select=(action 'updateFilters' 'subjects')}}
+                            {{search-result result=result select=(action 'updateParams' 'subjects')}}
                         {{/each}}
 
                         <div class="row">

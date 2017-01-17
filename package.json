@@ -73,7 +73,9 @@
     "loader.js": "^4.0.1",
     "phantomjs-prebuilt": "^2.1.11",
     "postcss": "^5.1.0",
-    "langs": "^1.0.2"
+    "langs": "^1.0.2",
+    "ember-lodash": "0.0.10"
+
   },
   "dependencies": {
   },
