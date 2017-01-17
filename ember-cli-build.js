@@ -13,7 +13,7 @@ module.exports = function(defaults) {
     const useCdn = (nonCdnEnvironments.indexOf(process.env.EMBER_ENV) === -1);
 
     const css = {
-        'app': '/assets/preprint-service.css'
+        'app': '/assets/retraction-watch-service.css'
     };
 
     const brands = fs.readdirSync('./app/styles/brands');

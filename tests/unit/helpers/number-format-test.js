@@ -1,4 +1,4 @@
-import { numberFormat } from 'preprint-service/helpers/number-format';
+import { numberFormat } from 'retraction-watch-service/helpers/number-format';
 import { module, test } from 'qunit';
 
 module('Unit | Helper | number format');

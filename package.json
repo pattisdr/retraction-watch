@@ -1,7 +1,7 @@
 {
-  "name": "preprint-service",
+  "name": "retraction-watch-service",
   "version": "0.103.0",
-  "description": "Small description for preprint-service goes here",
+  "description": "Small description for retraction-watch-service goes here",
   "private": true,
   "directories": {
     "test": "tests"

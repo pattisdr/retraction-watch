@@ -4,7 +4,7 @@ module.exports = function(environment) {
     var authorizationType = 'cookie';
 
     var ENV = {
-        modulePrefix: 'preprint-service',
+        modulePrefix: 'retraction-watch-service',
         environment: environment,
         rootURL: '/',
         feedURL: 'http://retractionwatch.com/feed/',
