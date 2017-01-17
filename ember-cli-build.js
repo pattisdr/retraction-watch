@@ -56,6 +56,7 @@ module.exports = function(defaults) {
                 'node_modules/ember-osf/addon/styles',
                 'bower_components/bootstrap-sass/assets/stylesheets',
                 'bower_components/osf-style/sass',
+                'bower_components/bootstrap-daterangepicker',
                 'bower_components/hint.css'
             ]
         },
@@ -124,6 +125,8 @@ module.exports = function(defaults) {
     app.import(path.join(app.bowerDirectory, 'osf-style/page.css'));
     app.import(path.join(app.bowerDirectory, 'osf-style/css/base.css'));
     app.import(path.join(app.bowerDirectory, 'loaders.css/loaders.min.css'));
+    app.import('bower_components/bootstrap-daterangepicker/daterangepicker.js');
+
 
 
     app.import(path.join(app.bowerDirectory, 'osf-style/img/cos-white2.png'), {

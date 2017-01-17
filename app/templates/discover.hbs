@@ -45,7 +45,7 @@
 <div class="retraction-watch-search-main p-v-xl">
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 preprint-search-sidebar">
+            <div class="col-sm-4 preprint-search-sidebar"> {{!LEFT PANEL}}
                 {{#if showActiveFilters}}
                     <div id="activeFilters" class="well well-sm p-md">
                         <div class="row">
@@ -74,6 +74,15 @@
                     </div>
                 {{/if}}
                 <h4>{{t "discover.main.refine"}}</h4> {{!Refine Search}}
+                {{!COPIED FROM EMBER-SHARE}}
+                {{faceted-search
+                    onChange='filtersChanged'
+                    updateParams='updateParams'
+                    filters=facetFilters
+                    facetStates=facetStates
+                    facets=facets
+                    aggregations=aggregations
+                }}
                 <div class='m-v-md'>
                     <h4 class="filter-heading p-sm">{{t "discover.main.date"}}</h4> {{!Filter by date}}
                     <div class="form-group">

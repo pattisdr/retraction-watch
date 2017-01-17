@@ -2,7 +2,7 @@ import Ember from 'ember';
 import config from 'ember-get-config';
 import Analytics from '../mixins/analytics';
 
-import { elasticEscape } from '../utils/elastic-query';
+import { elasticEscape, encodeParams, getSplitParams } from '../utils/elastic-query';
 
 var getProvidersPayload = '{"from": 0,"query": {"bool": {"must": {"query_string": {"query": "*"}}, "filter": [{"term": {"types.raw": "preprint"}}]}},"aggregations": {"sources": {"terms": {"field": "sources.raw","size": 200}}}}';
 
@@ -10,6 +10,9 @@ const filterMap = {
     providers: 'sources.raw',
     subjects: 'subjects'
 };
+
+let filterQueryParams = ['tags', 'sources', 'publishers', 'funders', 'institutions', 'organizations', 'language', 'contributors', 'type'];
+
 
 export default Ember.Controller.extend(Analytics, {
     theme: Ember.inject.service(), // jshint ignore:line
@@ -52,6 +55,21 @@ export default Ember.Controller.extend(Analytics, {
     queryBody: {},
     providersPassed: false,
 
+    // Modified from Ember-SHARE (retraction-watch facets instead of SHARE facets)
+    facets: Ember.computed(function() {
+        return [
+            { key: 'date', title: 'Date', component: 'search-facet-daterange' },
+            { key: 'type', title: 'Type', component: 'search-facet-worktype' },
+            { key: 'subject', title: 'Subjects', component: 'search-facet-worktype' },
+            { key: 'publishers', title: 'Publisher', component: 'search-facet-typeahead', type: 'publisher' },
+            { key: 'funders', title: 'Funder', component: 'search-facet-typeahead', type: 'funder' },
+            { key: 'institutions', title: 'Institution', component: 'search-facet-typeahead', type: 'institution' },
+            { key: 'organization', title: 'Organization', component: 'search-facet-typeahead', type: 'organization' },
+            { key: 'language', title: 'Language', component: 'search-facet-language' },
+            { key: 'people', title: 'People', component: 'search-facet-typeahead', type: 'person' },
+        ];
+    }),
+
     sortByOptions: ['Relevance', 'Upload date (oldest to newest)', 'Upload date (newest to oldest)'],
 
     treeSubjects: Ember.computed('activeFilters', function() {
@@ -71,6 +89,27 @@ export default Ember.Controller.extend(Analytics, {
     results: Ember.ArrayProxy.create({ content: [] }),
 
     searchUrl: config.SHARE.searchUrl,
+
+    facetStatesArray: [],
+
+    // Copied from Ember-SHARE
+    facetStates: Ember.computed(...filterQueryParams, 'end', 'start', function() {
+        let facetStates = {};
+        for (let param of filterQueryParams) {
+            facetStates[param] = getSplitParams(this.get(param));
+        }
+        facetStates.date = { start: this.get('start'), end: this.get('end') };
+
+        Ember.run.once(this, function() {
+            let facets = this.get('facetStates');
+            let facetArray = [];
+            for (let key of Object.keys(facets)) {
+                facetArray.push({ key: key, value: facets[key] });
+            }
+            this.set('facetStatesArray', facetArray);
+        });
+        return facetStates;
+    }),
 
     init() {
         this._super(...arguments);
@@ -192,19 +231,19 @@ export default Ember.Controller.extend(Analytics, {
                     }
                 });
 
-                result.contributors = result.lists.contributors
-                  .sort((b, a) => (b.order_cited || -1) - (a.order_cited || -1))
-                  .map(contributor => ({
-                        users: Object.keys(contributor)
-                          .reduce(
-                              (acc, key) => Ember.merge(acc, {[key.camelize()]: contributor[key]}),
-                              {bibliographic: contributor.relation !== 'contributor'}
-                          )
-                    }));
-
-                // Temporary fix to handle half way migrated SHARE ES
-                // Only false will result in a false here.
-                result.contributors.map(contributor => contributor.users.bibliographic = !(contributor.users.bibliographic === false));  // jshint ignore:line
+                // result.contributors = result.lists.contributors
+                //   .sort((b, a) => (b.order_cited || -1) - (a.order_cited || -1))
+                //   .map(contributor => ({
+                //         users: Object.keys(contributor)
+                //           .reduce(
+                //               (acc, key) => Ember.merge(acc, {[key.camelize()]: contributor[key]}),
+                //               {bibliographic: contributor.relation !== 'contributor'}
+                //           )
+                //     }));
+                //
+                // // Temporary fix to handle half way migrated SHARE ES
+                // // Only false will result in a false here.
+                // result.contributors.map(contributor => contributor.users.bibliographic = !(contributor.users.bibliographic === false));  // jshint ignore:line
 
                 return result;
             });
@@ -228,7 +267,7 @@ export default Ember.Controller.extend(Analytics, {
             {
                 terms: {
                     'type.raw': [
-                        'preprint'
+                        'retraction'
                     ]
                 }
             }
@@ -369,6 +408,20 @@ export default Ember.Controller.extend(Analytics, {
                     action: hasItem ? 'remove' : 'add',
                     label: `Preprints - Discover - ${filterType} ${item}`
                 });
+        },
+        // Copied from Ember-SHARE
+        updateParams(key, value) {
+            if (key === 'date') {
+                this.set('start', value.start);
+                this.set('end', value.end);
+            } else {
+                value = value ? encodeParams(value) : '';
+                this.set(key, value);
+            }
+        },
+        // Copied from Ember-SHARE
+        filtersChanged() {
+            this.send('search');
         },
     },
 });

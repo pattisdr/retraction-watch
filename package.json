@@ -27,6 +27,7 @@
     "ember-ajax": "^2.0.1",
     "ember-autosave": "2.0.1",
     "ember-bootstrap": "0.7.2",
+    "ember-browserify": "^1.1.10",
     "ember-cli": "^2.7.0",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-babel": "^5.1.6",
@@ -71,9 +72,11 @@
     "liquid-fire": "0.24.1",
     "loader.js": "^4.0.1",
     "phantomjs-prebuilt": "^2.1.11",
-    "postcss": "^5.1.0"
+    "postcss": "^5.1.0",
+    "langs": "^1.0.2"
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "bugs": {
     "url": "https://github.com/CenterForOpenScience/ember-preprints/issues"
   },
