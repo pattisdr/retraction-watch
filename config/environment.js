@@ -27,6 +27,7 @@ module.exports = function(environment) {
         },
         SHARE: {
             baseUrl: process.env.SHARE_BASE_URL || 'https://staging-share.osf.io/',
+            apiUrl: process.env.SHARE_API_URL || 'https://staging-share.osf.io/api/v2',
             searchUrl: process.env.SHARE_SEARCH_URL || 'https://staging-share.osf.io/api/v2/search/creativeworks/_search'
         },
         moment: {
