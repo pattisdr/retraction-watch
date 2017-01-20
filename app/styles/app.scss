@@ -45,6 +45,16 @@
         background-size: contain;
         vertical-align: middle;
     }
+    .panel-default {
+        > .panel-heading {
+            background-color: #5B2023 !important;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+        }
+    }
 }
 
 .retraction-watch-brand {
