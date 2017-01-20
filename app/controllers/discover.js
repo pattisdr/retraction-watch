@@ -37,6 +37,18 @@ export default Ember.Controller.extend(Analytics, {
             { key: 'contributors', title: 'People', component: 'search-facet-typeahead', type: 'person' },
         ];
     }),
+    lockedQueryBody: [
+        {
+            "term": {
+                "sources.raw": "PubMed Central"
+            }
+        },
+        {
+            "term": {
+                "types.raw": "retraction"
+            }
+        }
+    ],
 
      sortOptions: [{
             display: 'Relevance',
