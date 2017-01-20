@@ -38,4 +38,14 @@ export default Ember.Controller.extend(Analytics, {
         ];
     }),
 
+     sortOptions: [{
+            display: 'Relevance',
+            sortBy: ''
+        }, {
+            display: 'Date Published (Desc)',
+            sortBy: '-date_published'
+        }, {
+            display: 'Date Published (Asc)',
+            sortBy: 'date_published'
+        }]
 });
