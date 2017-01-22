@@ -74,7 +74,8 @@ export default {
             facebook: 'Facebook',
             instagram: 'Instagram',
             support: `Support`,
-            contact: `Contact`
+            contact: `Contact`,
+            blog: `Blog`
         },
         'retraction-watch-navbar': {
             toggle: `Toggle navigation`

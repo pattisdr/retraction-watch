@@ -5,6 +5,7 @@
                 <div class="text-center retraction-watch-footer-links">
                     <div>
                         <span>{{t "global.retraction_watch"}}: </span>
+                        {{!Support Link}}
                         <span>
                             <a href="mailto:{{if model.emailSupport model.emailSupport (concat 'support+' model.id '@osf.io')}}"
                                onbeforeclick={{action 'click' 'link' 'RW Footer - Support'}}
@@ -13,6 +14,7 @@
                             </a>
                         </span>
                         <span> | </span>
+                         {{!Contact Link}}
                         <span>
                             <a href="mailto:retractionwatchteam@gmail.com"
                                onbeforeclick={{action 'click' 'link' 'RW Footer - Contact'}}
@@ -21,6 +23,14 @@
                             </a>
                         </span>
                         <span> | </span>
+                         {{!Blog Link}}
+                        <span>
+                            <a href="http://retractionwatch.com"
+                               onbeforeclick={{action 'click' 'link' 'RW Footer - Blog'}}
+                            >
+                                {{t "components.retraction-watch-footer.blog"}}
+                            </a>
+                        </span>
                     </div>
                     <div class="social">
                         {{!TWITTER}}
