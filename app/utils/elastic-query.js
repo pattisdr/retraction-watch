@@ -4,7 +4,7 @@ import moment from 'moment';
 // Many functions copied from Ember-SHARE
 
 /**
- * @module ember-preprints
+ * @module retraction-watch
  * @submodule utils
  */
 

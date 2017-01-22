@@ -7,7 +7,7 @@
                 <div class="text-center m-t-lg m-b-xs p-r-xl col-xs-12"> {{! Logo currently off-center, so adjustment added w/ p-r-xl}}
                     <div class="retraction-watch-brand"></div>
                 </div>
-                {{!SEARCH}}
+                {{!SEARCH BAR}}
                 <div class="retraction-watch-search col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 m-t-xs m-b-xl" >
                     {{search-retraction-watch search="search"}}
                 </div>
@@ -36,7 +36,7 @@
                             type="button" class="retraction-watch-browse-button"
                             invokeAction=(action 'click' 'button' 'Retraction Watch - Index - Browse Button')
                         }}
-                            {{t "index.browse.button"}}
+                            {{t "index.browse.button"}} {{!BROWSE BUTTON}}
                         {{/link-to}}
                     </div>
                 </div>
@@ -63,14 +63,14 @@
                                     <div class="p-b-sm">
                                         <h3 class="blog-title">
                                             <a href={{entry.link}}>
-                                                {{entry.title}}
+                                                {{entry.title}} {{!Blog Title}}
                                             </a>
                                         </h3>
-                                        <h4> <em>{{entry.author}}</em></h4>
-                                        <h5> {{moment-format entry.date}}</h5>
-                                        <p class="individual-blog-links"> {{html-safe entry.description}} </p>
+                                        <h4> <em>{{entry.author}}</em></h4> {{!Blog Author}}
+                                        <h5> {{moment-format entry.date}}</h5> {{!Blog Date}}
+                                        <p class="individual-blog-links"> {{html-safe entry.description}} </p> {{!First few sentences of blog post}}
                                         {{#each entry.categories as |category|}}
-                                            <span class="badge">{{category}}</span>
+                                            <span class="badge">{{category}}</span> {{!Blog Tags}}
                                         {{/each}}
                                     </div>
                                 {{/each}}

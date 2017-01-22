@@ -4,6 +4,7 @@ import Analytics from '../mixins/analytics';
 let filterQueryParams = ['tags', 'sources', 'publishers', 'funders', 'institutions', 'organizations', 'language', 'contributors', 'type'];
 
 export default Ember.Controller.extend(Analytics, {
+    // Possible query parameters for retraction watch
     queryParams:  Ember.computed(function() {
         let allParams = ['q', 'start', 'end', 'sort', 'page'];
         allParams.push(...filterQueryParams);
@@ -23,6 +24,7 @@ export default Ember.Controller.extend(Analytics, {
     type: '',
     sort: '',
 
+    // Filters displayed on left-hand pane of discover page
     facets: Ember.computed(function() {
         return [
             { key: 'sources', title: 'Source', component: 'search-facet-locked', locked_items: ['PubMed Central']},
@@ -37,6 +39,7 @@ export default Ember.Controller.extend(Analytics, {
             { key: 'contributors', title: 'People', component: 'search-facet-typeahead', type: 'person' },
         ];
     }),
+    // Locked portion of query for Retraction Watch
     lockedQueryBody: [
         {
             "term": {
@@ -49,7 +52,7 @@ export default Ember.Controller.extend(Analytics, {
             }
         }
     ],
-
+    // Sorting options for retraction watch
      sortOptions: [{
             display: 'Relevance',
             sortBy: ''
