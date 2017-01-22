@@ -51,14 +51,17 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h2 class="blog-post-heading">{{t "index.latest_blog_posts"}}</h2> {{! Latest Posts}}
-                    {{#if (not blogAttributes)}} {{! Until blog posts have loaded}}
+                    {{#if blogError}}
+                        <p class="text-danger m-t-md text-center">
+                            {{t "index.blog_error"}}
+                        </p>
+                    {{else if (not blogAttributes)}} {{! Until blog posts have loaded}}
                         <div class="p-v-md text-center blog-loading">
                             {{fa-icon 'spinner' pulse=true size=4}}
                         </div>
                     {{else}}
                         <div class="row m-t-sm">
                             <div class="col-xs-12 col-sm-8 col-sm-offset-2 blog-posts-block">
-                                {{debugger}}
                                 {{#each blogAttributes as |entry|}} {{!Individual Blog Entries}}
                                     <div class="p-b-sm">
                                         <h3 class="blog-title">

@@ -56,9 +56,9 @@ export default {
             explanation4: `blog`,
             explanation5: ` in 2010 that they're far more common than we initially thought.`,
             button: `Browse`
-
         },
         latest_blog_posts: `Latest blog posts`,
+        blog_error: `Blog posts cannot be retrieved at this time.`
     },
     'page-not-found': {
         heading: `Page not found`,

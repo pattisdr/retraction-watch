@@ -14,6 +14,7 @@ function getCategories(entry) {
 
 export default Ember.Controller.extend(Analytics, {
     blogAttributes: [],
+    blogError: false,
     numPosts: 3, // Number of blog posts to be fetched and displayed on index page
     init() {
         // Fetch latest retraction watch blog posts.
@@ -22,6 +23,9 @@ export default Ember.Controller.extend(Analytics, {
             // url: config.feedURL,
             url: 'https://cors-anywhere.herokuapp.com/http://retractionwatch.com/feed', // TEMPORARY UNTIL CORS ISSUES RESOLVED
             contentType: 'application/rss+xml',
+            error: (() => {
+                this.set('blogError', true); // If blog posts cannot be loaded
+            })
         })
         .then(results => {
             let attributes = [];
