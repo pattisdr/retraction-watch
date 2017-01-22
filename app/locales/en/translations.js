@@ -69,19 +69,15 @@ export default {
         go_to: `Go to {{service}}`
     },
     components: {
-        'preprint-footer-branded': {
+        'retraction-watch-footer': {
             twitter: 'Twitter',
             facebook: 'Facebook',
             instagram: 'Instagram',
             support: `Support`,
             contact: `Contact`
         },
-        'preprint-navbar': {
+        'retraction-watch-navbar': {
             toggle: `Toggle navigation`
-        },
-        'preprint-navbar-branded': {
-            my_projects: `My OSF Projects`,
-            headline: `On the OSF`,
         }
     }
 };

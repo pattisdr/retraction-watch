@@ -2,6 +2,7 @@ import Ember from 'ember';
 // import config from 'ember-get-config'; // Restore after CORS issues resolved
 import Analytics from '../mixins/analytics';
 
+// Push all blog categories into a single array
 function getCategories(entry) {
     const categories = entry.getElementsByTagName('category');
     const categoryArray = [];
@@ -13,7 +14,7 @@ function getCategories(entry) {
 
 export default Ember.Controller.extend(Analytics, {
     blogAttributes: [],
-    numPosts: 3,
+    numPosts: 3, // Number of blog posts to be fetched and displayed on index page
     init() {
         // Fetch latest retraction watch blog posts.
         Ember.$.ajax({
@@ -30,9 +31,10 @@ export default Ember.Controller.extend(Analytics, {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(descriptionXMLString, 'text/xml');
 
+                // Extract pieces from blog feed
                 attributes.push({
                     title: entry.getElementsByTagName('title')[0].textContent,
-                    description: doc.getElementsByTagName('p')[0].childNodes[1].textContent, //Get parse error here, not reliable.
+                    description: doc.getElementsByTagName('p')[0].childNodes[1].textContent, //Get parse error here, maybe not reliable?
                     author: entry.getElementsByTagName('creator')[0].textContent,
                     link: entry.getElementsByTagName('link')[0].textContent,
                     date: entry.getElementsByTagName('pubDate')[0].textContent,

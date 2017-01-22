@@ -78,9 +78,9 @@
     "langs": "^1.0.2"
   },
   "bugs": {
-    "url": "https://github.com/CenterForOpenScience/ember-preprints/issues"
+    "url": "https://github.com/CenterForOpenScience/retraction-watch/issues"
   },
-  "homepage": "https://github.com/CenterForOpenScience/ember-preprints#readme",
+  "homepage": "https://github.com/CenterForOpenScience/retraction-watch#readme",
   "jscsConfig": {
     "preset": "airbnb",
     "excludeFiles": [
