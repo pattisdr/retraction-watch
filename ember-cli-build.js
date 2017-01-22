@@ -16,16 +16,6 @@ module.exports = function(defaults) {
         'app': '/assets/retraction-watch-service.css'
     };
 
-    const brands = fs.readdirSync('./app/styles/brands');
-
-    for (let brand of brands) {
-        if (/^_/.test(brand))
-            continue;
-
-        brand = brand.replace(/\..*$/, '');
-        css[`brands/${brand}`] = `/assets/css/${brand}.css`;
-    }
-
     // Reference: https://github.com/travis-ci/travis-web/blob/master/ember-cli-build.js
     var app = new EmberApp(defaults, {
         sourcemaps: {
@@ -42,7 +32,7 @@ module.exports = function(defaults) {
         'ember-bootstrap': {
             importBootstrapCSS: false
         },
-        // Needed for branded themes
+        // Needed for branded themes CAN THIS BE DELETED??
         fingerprint: {
             customHash: config.ASSET_SUFFIX,
         },

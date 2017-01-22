@@ -96,10 +96,6 @@ ul.comma-list {
     color: #2E5374;
 }
 
-.blog-badge {
-    background: #2E5374 !important;
-}
-
 .blog-post-heading {
     color: #5B2023;
 }
@@ -267,4 +263,8 @@ a.blog_link {
     padding: 120px 0 120px 0;
     background-color: #ecf2f3;
     border-bottom: 1px solid #d6dbdc;
+}
+
+.badge {
+    background: #2E5374 !important;
 }
