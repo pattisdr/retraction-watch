@@ -34,7 +34,7 @@ export default Ember.Controller.extend(Analytics, {
             { key: 'publishers', title: 'Publisher', component: 'search-facet-typeahead', type: 'publisher' },
             { key: 'funders', title: 'Funder', component: 'search-facet-typeahead', type: 'funder' },
             { key: 'institutions', title: 'Institution', component: 'search-facet-typeahead', type: 'institution' },
-            { key: 'organizations', title: 'Organizations', component: 'search-facet-typeahead', type: 'organization' },
+            { key: 'organizations', title: 'Organization', component: 'search-facet-typeahead', type: 'organization' },
             { key: 'language', title: 'Language', component: 'search-facet-language' },
             { key: 'contributors', title: 'People', component: 'search-facet-typeahead', type: 'person' },
         ];

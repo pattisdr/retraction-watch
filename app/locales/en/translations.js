@@ -63,7 +63,7 @@ export default {
     'page-not-found': {
         heading: `Page not found`,
         paragraph: {
-            line1: `The page you were looking for is not found on the Retraction Watch service.`,
+            line1: `The page you were looking for is not found on the Retraction Watch database service.`,
             line2: `If this should not have occurred and the issue persists, please report it to`
         },
         go_to: `Go to {{service}}`

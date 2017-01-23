@@ -4,16 +4,20 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
+                {{! PAGE NOT FOUND HEADING}}
                 <h1>{{t "page-not-found.heading"}}</h1>
                 <p>
+                     {{!NOT FOUND EXPLANATION}}
                     <span>{{t "page-not-found.paragraph.line1"}}</span>
                     <br>
                     <span>{{t "page-not-found.paragraph.line2"}}</span>
+                     {{!SUPPORT LINK }}
                     <a href="mailto:support@osf.io"
                        onbeforeclick={{action "click" "link" "Page not found - Support"}}>
-                        {{"support@osf.io"}}
-                    </a>
+                        support@osf.io
+                    </a>.
                 </p>
+                    {{!LINK TO RETRACTION WATCH INDEX}}
                     {{#link-to "index" class="btn btn-primary m-t-md" invokeAction=(action "click" "link" "Page not found - Go to Index")}}
                         {{t "page-not-found.go_to" service=(t "global.retraction_watch")}}
                     {{/link-to}}
