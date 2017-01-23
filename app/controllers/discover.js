@@ -40,18 +40,8 @@ export default Ember.Controller.extend(Analytics, {
         ];
     }),
     // Locked portion of query for Retraction Watch
-    lockedQueryBody: [
-        {
-            "term": {
-                "sources.raw": "PubMed Central"
-            }
-        },
-        {
-            "term": {
-                "types.raw": "retraction"
-            }
-        }
-    ],
+    lockedParams: {'sources': 'PubMed Central', 'types': 'retraction'},
+
     // Sorting options for retraction watch
      sortOptions: [{
             display: 'Relevance',
@@ -64,3 +54,5 @@ export default Ember.Controller.extend(Analytics, {
             sortBy: 'date_published'
         }]
 });
+
+
