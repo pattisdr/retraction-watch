@@ -37,7 +37,7 @@ ul.comma-list {
     background: white;
     padding-top: 125px;
     padding-bottom: 30px;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid $rw-light-gray;
     color: white;
     h1 {
         font-size: 41px;
@@ -61,7 +61,7 @@ ul.comma-list {
 
 /* Browse Button */
 .retraction-watch-browse-button {
-    background: #5B2023;
+    background: $rw-brown;
     color: white;
     border-radius: 20px;
     -moz-border-radius: 20px;
@@ -77,14 +77,14 @@ ul.comma-list {
     &:hover {
         text-decoration: None;
         color: white;
-        background: #2E5374;
+        background: $rw-navy;
     }
 }
 
 /* Browse Retraction Watch */
 .browse-retraction-watch {
-    background-color: #f1f3f2;
-    border-bottom: 1px solid #DDDDDD;
+    background-color: $rw-gray-background;
+    border-bottom: 1px solid $rw-light-gray;
     .subject-item a {
         width: 100%;
         font-size: 17px;
@@ -93,47 +93,47 @@ ul.comma-list {
 
 /* Blog Posts */
 .blog-loading {
-    color: #2E5374;
+    color: $rw-navy;
 }
 
 .blog-post-heading {
-    color: #5B2023;
+    color: $rw-brown;
 }
 
 a.blog_link {
     text-decoration: underline;
     &:link {
-        color: #5B2023;
+        color: $rw-brown;
     }
     &:visited {
-        color: #5B2023;
+        color: $rw-brown;
     }
     &:hover {
-        color: #2E5374;
+        color: $rw-navy;
     }
     display: inline-block;
 }
 
 .blog-posts-block {
-    border-left: 1px solid #2E5374;
+    border-left: 1px solid $rw-navy;
 }
 
 .blog-title a {
-    color: #5B2023;
+    color: $rw-brown;
     text-decoration: none;
     &:hover {
-        color: #2E5374;
+        color: $rw-navy;
     }
 }
 
 .individual-blog-links a {
-    color: #2E5374;
+    color: $rw-navy;
     line-height: 10px;
 }
 
 /* Summary of Retraction Watch */
 .retraction-watch-explanation {
-    color: #5B2023;
+    color: $rw-brown;
     text-align: center;
     font-size: 1.35em;
 }
@@ -144,7 +144,7 @@ a.blog_link {
     top: 0px;
     width: 100%;
     padding: 0;
-    background: #5B2023;
+    background: $rw-brown;
     z-index: 99;
     box-shadow: 0 0 4px #525151;
     border-radius: 0;
@@ -152,7 +152,7 @@ a.blog_link {
         color: #ffffff;
     }
     .nav > li > a:hover, .nav > li > a.active, .navbar-brand:hover {
-        background-color: #5B2023;
+        background-color: $rw-brown;
         color: #a4c1db;
 
     }
@@ -181,7 +181,7 @@ a.blog_link {
     padding: 8px;
     bottom: 0px;
     width: 100%;
-    background: #5B2023;
+    background: $rw-brown;
     color: white;
     a {
         color: #ffffff;
@@ -240,7 +240,7 @@ a.blog_link {
     }
     .panel-default {
         > .panel-heading {
-            background-color: #5B2023 !important;
+            background-color: $rw-brown !important;
             color: white;
             display: flex;
             align-items: center;
@@ -255,8 +255,15 @@ a.blog_link {
     padding: 120px 0 120px 0;
     background-color: #ecf2f3;
     border-bottom: 1px solid #d6dbdc;
+    .btn {
+        background-color: $rw-navy;
+        &:hover {
+            background-color: gray;
+            border: 1px solid gray;
+        }
+    }
 }
 
 .badge {
-    background: #2E5374 !important;
+    background: $rw-navy !important;
 }
