@@ -28,13 +28,11 @@ export default {
         },
         sort_by: `Sort by`,
         main: {
-            active_filters: {
-                heading: `Active Filters`,
-                button: `Clear filters`
-            },
-            refine: `Refine your search by`,
+            clear_filters: `Clear filters`,
             date: `Date`,
+            source: `Source`,
             type: `Type`,
+            tag: `Tag`,
             subject: `Subject`,
             publisher: `Publisher`,
             funder: `Funder`,
@@ -46,6 +44,11 @@ export default {
                 of: `of`,
                 no_results: `Try broadening your search terms`
             },
+        },
+        sort: {
+            relevance: `Relevance`,
+            date_published_desc: `Date Published (Desc)`,
+            date_published_asc: `Date Published (Asc)`
         }
     },
     index: {
