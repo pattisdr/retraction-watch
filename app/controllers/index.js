@@ -12,6 +12,19 @@ function getCategories(entry) {
     return categoryArray;
 }
 
+// Extracts blog description, removing repetitive lines @ end of blog post
+function getDescription(entry) {
+    const descriptionXMLString = entry.getElementsByTagName('description')[0].textContent;
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(descriptionXMLString, 'text/xml');
+
+    let description = doc.getElementsByTagName('p')[0].childNodes[1].textContent; //Get parse error here, maybe not reliable?
+    if (description.includes('[…]')) {
+        return description.replace('[…]', '');
+    }
+    return description;
+}
+
 export default Ember.Controller.extend(Analytics, {
     blogAttributes: [],
     blogError: false,
@@ -31,14 +44,11 @@ export default Ember.Controller.extend(Analytics, {
             let attributes = [];
             for (var i = 0; i < this.get('numPosts'); i++) {
                 const entry = results.getElementsByTagName('item')[i];
-                const descriptionXMLString = entry.getElementsByTagName('description')[0].textContent;
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(descriptionXMLString, 'text/xml');
 
                 // Extract pieces from blog feed
                 attributes.push({
                     title: entry.getElementsByTagName('title')[0].textContent,
-                    description: doc.getElementsByTagName('p')[0].childNodes[1].textContent, //Get parse error here, maybe not reliable?
+                    description: getDescription(entry),
                     author: entry.getElementsByTagName('creator')[0].textContent,
                     link: entry.getElementsByTagName('link')[0].textContent,
                     date: entry.getElementsByTagName('pubDate')[0].textContent,

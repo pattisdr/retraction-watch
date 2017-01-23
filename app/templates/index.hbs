@@ -71,7 +71,15 @@
                                         </h3>
                                         <h4> <em>{{entry.author}}</em></h4> {{!Blog Author}}
                                         <h5> {{moment-format entry.date}}</h5> {{!Blog Date}}
-                                        <p class="individual-blog-links"> {{html-safe entry.description}} </p> {{!First few sentences of blog post}}
+                                        <p class="individual-blog-links">
+                                            {{html-safe entry.description}} {{!First few sentences of blog post}}
+                                            <a href={{entry.link}}
+                                                 onclick={{action "click" "link" "Retraction Watch - Index - Nav to Blog Post from ellipses"}}
+                                            >
+                                                […] {{!Blog truncated}}
+                                            </a>
+                                        </p>
+
                                         {{#each entry.categories as |category|}}
                                             <span class="badge">{{category}}</span> {{!Blog Tags}}
                                         {{/each}}
