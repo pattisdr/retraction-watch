@@ -25,7 +25,7 @@
                             {{t "index.browse.explanation1"}} <strong> {{t "index.browse.explanation2"}} </strong>
                             {{t "index.browse.explanation3"}}
                             <a class="blog_link" href="http://retractionwatch.com/"
-                                {{action "click" "link" "Retraction Watch - Index - Blog"}}>
+                                onclick={{action "click" "link" "Retraction Watch - Index - Blog"}}>
                                 {{t "index.browse.explanation4"}}
                             </a>
                             {{t "index.browse.explanation5"}}
@@ -43,8 +43,6 @@
             </div>{{!END ROW}}
         </div> {{!END CONTAINER}}
     </div> {{!END BROWSE SECTION}}
-
-
 
     <div class="p-v-md"> {{!BLOG POSTS}}
         <div class="container p-b-lg">
@@ -65,7 +63,9 @@
                                 {{#each blogAttributes as |entry|}} {{!Individual Blog Entries}}
                                     <div class="p-b-sm">
                                         <h3 class="blog-title">
-                                            <a href={{entry.link}}>
+                                            <a href={{entry.link}}
+                                                 onclick={{action "click" "link" "Retraction Watch - Index - Nav to Blog Post"}}
+                                            >
                                                 {{entry.title}} {{!Blog Title}}
                                             </a>
                                         </h3>

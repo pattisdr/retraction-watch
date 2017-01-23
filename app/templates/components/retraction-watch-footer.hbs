@@ -7,8 +7,8 @@
                         <span>{{t "global.retraction_watch"}}: </span>
                         {{!Support Link}}
                         <span>
-                            <a href="mailto:{{if model.emailSupport model.emailSupport (concat 'support+' model.id '@osf.io')}}"
-                               onbeforeclick={{action 'click' 'link' 'RW Footer - Support'}}
+                             <a href="mailto:support@osf.io"
+                               onclick={{action 'click' 'link' 'Retraction Watch - Footer - Support'}}
                             >
                                 {{t "components.retraction-watch-footer.support"}}
                             </a>
@@ -17,7 +17,7 @@
                          {{!Contact Link}}
                         <span>
                             <a href="mailto:retractionwatchteam@gmail.com"
-                               onbeforeclick={{action 'click' 'link' 'RW Footer - Contact'}}
+                               onclick={{action 'click' 'link' 'Retraction Watch - Footer - Contact'}}
                             >
                                 {{t "components.retraction-watch-footer.contact"}}
                             </a>
@@ -26,7 +26,7 @@
                          {{!Blog Link}}
                         <span>
                             <a href="http://retractionwatch.com"
-                               onbeforeclick={{action 'click' 'link' 'RW Footer - Blog'}}
+                               onclick={{action 'click' 'link' 'Retraction Watch - Footer - Blog'}}
                             >
                                 {{t "components.retraction-watch-footer.blog"}}
                             </a>
@@ -36,14 +36,14 @@
                         {{!TWITTER}}
                         <a href="https://twitter.com/RetractionWatch"
                            aria-label={{t "components.retraction-watch-footer.twitter"}}
-                           onbeforeclick={{action 'click' 'link' 'RW Footer - Twitter'}}
+                           onclick={{action 'click' 'link' 'Retraction Watch - Footer - Twitter'}}
                         >
                             <i class="fa fa-2x fa-twitter"></i>
                         </a>
                         {{!FACEBOOK}}
                         <a href="https://www.facebook.com/retractionwatch"
                            aria-label={{t "components.retraction-watch-footer.facebook"}}
-                           onbeforeclick={{action 'click' 'link' 'RW Footer - Facebook'}}
+                           onclick={{action 'click' 'link' 'Retraction Watch - Footer - Facebook'}}
                         >
                             <i class="fa fa-2x fa-facebook"></i>
                         </a>
