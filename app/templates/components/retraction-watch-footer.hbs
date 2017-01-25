@@ -23,16 +23,15 @@
                             </a>
                         </span>
                         <span> | </span>
-                         {{!Blog Link}}
-                        <span>
-                            <a href="http://retractionwatch.com"
-                               onclick={{action 'click' 'link' 'Retraction Watch - Footer - Blog'}}
-                            >
-                                {{t "components.retraction-watch-footer.blog"}}
-                            </a>
-                        </span>
                     </div>
                     <div class="social">
+                        {{!Blog Link}}
+                        <a href="http://retractionwatch.com"
+                           aria-label='retraction watch blog'
+                           onclick={{action 'click' 'link' 'Retraction Watch - Footer - Blog'}}
+                        >
+                            <i class="fa fa-pencil-square-o fa-2x"></i>
+                        </a>
                         {{!TWITTER}}
                         <a href="https://twitter.com/RetractionWatch"
                            aria-label={{t "components.retraction-watch-footer.twitter"}}
