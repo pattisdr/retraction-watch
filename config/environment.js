@@ -8,7 +8,7 @@ module.exports = function(environment) {
         modulePrefix: 'retraction-watch',
         environment: environment,
         rootURL: '/',
-        feedURL: 'http://retractionwatch.com/feed/',
+        feedURL: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D'retractionwatch.com%2Ffeed'&diagnostics=true",
         locationType: 'auto',
         sentryDSN: 'http://test@localhost/80' || process.env.SENTRY_DSN,
         'ember-simple-auth': {

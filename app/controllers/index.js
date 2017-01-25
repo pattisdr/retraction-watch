@@ -1,5 +1,5 @@
 import Ember from 'ember';
-// import config from 'ember-get-config'; // Restore after CORS issues resolved
+import config from 'ember-get-config';
 import Analytics from '../mixins/analytics';
 
 // Push all blog categories into a single array
@@ -33,9 +33,8 @@ export default Ember.Controller.extend(Analytics, {
         // Fetch latest retraction watch blog posts.
         Ember.$.ajax({
             type: 'GET',
-            // url: config.feedURL,
-            url: 'https://cors-anywhere.herokuapp.com/http://retractionwatch.com/feed', // TEMPORARY UNTIL CORS ISSUES RESOLVED
-            contentType: 'application/rss+xml',
+            url: config.feedURL,
+            contentType: 'text/plain',
             error: (() => {
                 this.set('blogError', true); // If blog posts cannot be loaded
             })
