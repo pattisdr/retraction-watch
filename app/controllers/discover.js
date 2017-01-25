@@ -42,21 +42,19 @@ export default Ember.Controller.extend(Analytics, {
         ];
     }),
     // Locked portion of query for Retraction Watch
-    lockedParams: {'sources': 'PubMed Central', 'types': 'retraction'},
+    lockedParams: {sources: 'PubMed Central', types: 'retraction'},
 
     // Sorting options for retraction watch
-     sortOptions: Ember.computed(function() {
-         return  [{
+    sortOptions: Ember.computed(function() {
+        return [{
             display: this.get('i18n').t('discover.sort.relevance'),
             sortBy: ''
-         }, {
+        }, {
             display: this.get('i18n').t('discover.sort.date_published_desc'),
             sortBy: '-date_published'
-         }, {
+        }, {
             display: this.get('i18n').t('discover.sort.date_published_asc'),
             sortBy: 'date_published'
-         }];
-     })
+        }];
+    })
 });
-
-
