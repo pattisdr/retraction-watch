@@ -1,4 +1,4 @@
-import { elasticEscape } from 'retraction-watch-service/utils/elastic-query';
+import { elasticEscape } from 'retraction-watch/utils/elastic-query';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | elastic query');

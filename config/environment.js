@@ -1,15 +1,15 @@
 /* jshint node: true */
 
 module.exports = function(environment) {
-    var authorizationType = 'cookie';
+    var authorizationType = 'token';
 
     var ENV = {
-        modulePrefix: 'retraction-watch-service',
+        authorizationType: authorizationType,
+        modulePrefix: 'retraction-watch',
         environment: environment,
         rootURL: '/',
         feedURL: 'http://retractionwatch.com/feed/',
         locationType: 'auto',
-        authorizationType: authorizationType,
         sentryDSN: 'http://test@localhost/80' || process.env.SENTRY_DSN,
         'ember-simple-auth': {
             authorizer: `authorizer:osf-${authorizationType}`,
@@ -55,7 +55,7 @@ module.exports = function(environment) {
         // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
         // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
-        ENV.metricsAdapters[0].config.cookieDomain = 'none'
+        ENV.metricsAdapters[0].config.cookieDomain = 'none';
     }
 
     if (environment === 'test') {
@@ -74,7 +74,7 @@ module.exports = function(environment) {
         ENV.SHARE.baseUrl = '/nowhere';
         ENV.SHARE.searchUrl = '/nowhere';
 
-        ENV.metricsAdapters[0].config.cookieDomain = 'none'
+        ENV.metricsAdapters[0].config.cookieDomain = 'none';
     }
 
     if (environment === 'production') {

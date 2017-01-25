@@ -1,7 +1,7 @@
 {
-  "name": "retraction-watch-service",
-  "version": "0.103.0",
-  "description": "Small description for retraction-watch-service goes here",
+  "name": "retraction-watch",
+  "version": "0.1.0",
+  "description": "Database for retraction watch",
   "private": true,
   "directories": {
     "test": "tests"

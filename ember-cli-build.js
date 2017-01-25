@@ -13,7 +13,7 @@ module.exports = function(defaults) {
     const useCdn = (nonCdnEnvironments.indexOf(process.env.EMBER_ENV) === -1);
 
     const css = {
-        'app': '/assets/retraction-watch-service.css'
+        'app': '/assets/retraction-watch.css'
     };
 
     // Reference: https://github.com/travis-ci/travis-web/blob/master/ember-cli-build.js

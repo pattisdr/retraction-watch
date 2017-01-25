@@ -1,5 +1,5 @@
 
-import { htmlSafe } from 'retraction-watch-service/helpers/html-safe';
+import { htmlSafe } from 'retraction-watch/helpers/html-safe';
 import { module, test } from 'qunit';
 
 module('Unit | Helper | html safe');
