@@ -26,6 +26,7 @@ Router.map(function() {
     this.route('index', {path: '/'});
     this.route('page-not-found', {path: 'page-not-found'});
     this.route('discover', {path: 'discover'});
+    this.route('content', {path: '/retraction/:retraction_id'});
 });
 
 export default Router;

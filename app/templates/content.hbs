@@ -1,0 +1,61 @@
+{{title model.title}}
+
+{{!Copied from EMBER SHARE > app/templates/work.hbs}}
+<div class="title-container">
+    <div class="container">
+        <div class="detail-back-arrow-block">
+            <a class="detail-back-arrow" {{action "goBack"}}>
+                <span class="fa fa-arrow-left"></span>
+            </a>
+        </div>
+        {{#if retractions}}
+            <div class='retraction-alert bg-warning text-warning'>
+                <div class='lead'>{{fa-icon 'exclamation-triangle'}} This work has been retracted.</div>
+                {{#each retractions as |retraction|}}
+                    <div>
+                        Retraction notice:
+                        {{link-to retraction.subject.title 'detail' retraction.subject.type retraction.subject.id}}
+                    </div>
+                {{/each}}
+            </div>
+        {{/if}}
+        <div class="jumbotron">
+            <h1 class="title">
+                {{{safeTitle}}}
+                <br>
+                <small>{{model.type}}</small>
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div class="container detail-bottom-padding">
+    <br>
+    <p>
+        {{#if safeDescription}}
+            {{{safeDescription}}}
+        {{else}}
+            <span class="text-muted">No description provided.</span>
+        {{/if}}
+    </p>
+    <br>
+
+    {{#if hasExtra}}
+        <br>
+        <h3>Additional Information
+            <small>
+                <a {{action 'toggleExtra'}} href="#">
+                    {{#if showExtra}}
+                        <i class="fa fa-caret-down"></i>
+                    {{else}}
+                        <i class="fa fa-caret-left"></i>
+                    {{/if}}
+                </a>
+            </small>
+        </h3>
+        <hr class="detail-section-divider">
+        {{#if showExtra}}
+            {{json-pretty obj=model.extra shouldHighlight=true}}
+        {{/if}}
+    {{/if}}
+</div>
