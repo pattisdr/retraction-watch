@@ -3,22 +3,6 @@
 {{!Copied from EMBER SHARE > app/templates/work.hbs}}
 <div class="title-container">
     <div class="container">
-        <div class="detail-back-arrow-block">
-            <a class="detail-back-arrow" {{action "goBack"}}>
-                <span class="fa fa-arrow-left"></span>
-            </a>
-        </div>
-        {{#if retractions}}
-            <div class='retraction-alert bg-warning text-warning'>
-                <div class='lead'>{{fa-icon 'exclamation-triangle'}} This work has been retracted.</div>
-                {{#each retractions as |retraction|}}
-                    <div>
-                        Retraction notice:
-                        {{link-to retraction.subject.title 'detail' retraction.subject.type retraction.subject.id}}
-                    </div>
-                {{/each}}
-            </div>
-        {{/if}}
         <div class="jumbotron">
             <h1 class="title">
                 {{{safeTitle}}}
@@ -40,6 +24,15 @@
     </p>
     <br>
 
+     {{#each sections as |section|}}
+        {{#if (get this section.value)}}
+            <br>
+            <h3>{{section.title}}</h3>
+            <hr class="detail-section-divider">
+            {{component section.component model=model data=(get this section.value)}}
+        {{/if}}
+    {{/each}}
+
     {{#if hasExtra}}
         <br>
         <h3>Additional Information
@@ -48,7 +41,7 @@
                     {{#if showExtra}}
                         <i class="fa fa-caret-down"></i>
                     {{else}}
-                        <i class="fa fa-caret-left"></i>
+                        <i class="fa fa-caret-right"></i>
                     {{/if}}
                 </a>
             </small>
