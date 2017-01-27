@@ -5,7 +5,7 @@
     <div class="container">
         <div class="jumbotron">
             <h1 class="title">
-                {{{safeTitle}}}
+                {{safeTitle}}
                 <br>
                 <small>{{model.type}}</small>
             </h1>
@@ -17,14 +17,14 @@
     <br>
     <p>
         {{#if safeDescription}}
-            {{{safeDescription}}}
+            {{safeDescription}}
         {{else}}
             <span class="text-muted">No description provided.</span>
         {{/if}}
     </p>
     <br>
 
-     {{#each sections as |section|}}
+    {{#each sections as |section|}}
         {{#if (get this section.value)}}
             <br>
             <h3>{{section.title}}</h3>
@@ -35,7 +35,8 @@
 
     {{#if hasExtra}}
         <br>
-        <h3>Additional Information
+        <h3>
+            Additional Information
             <small>
                 <a {{action 'toggleExtra'}} href="#">
                     {{#if showExtra}}

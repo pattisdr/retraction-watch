@@ -1,5 +1,5 @@
 {{!Copied from Ember-SHARE}}
 {{#each items as |item index|}}
-    <span>{{{if index '&nbsp;&bull;&nbsp;' ''}}}</span>
+    <span>{{if index '&nbsp;&bull;&nbsp;' ''}}</span>
     {{yield item}}
 {{/each}}
