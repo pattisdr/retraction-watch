@@ -25,6 +25,7 @@ export default Ember.Controller.extend(Analytics, {
     end: '',
     type: '',
     sort: '',
+    detailRoute: 'detail',
 
     // Filters displayed on left-hand pane of discover page
     facets: Ember.computed(function() {
