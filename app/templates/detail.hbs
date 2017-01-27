@@ -5,7 +5,7 @@
     <div class="container">
         <div class="jumbotron">
             <h1 class="title">
-                {{safeTitle}}
+                {{{safeTitle}}}
                 <br>
                 <small>{{model.type}}</small>
             </h1>
@@ -17,7 +17,7 @@
     <br>
     <p>
         {{#if safeDescription}}
-            {{safeDescription}}
+            {{{safeDescription}}}
         {{else}}
             <span class="text-muted">No description provided.</span>
         {{/if}}
