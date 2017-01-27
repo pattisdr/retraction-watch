@@ -1,9 +1,11 @@
 import Ember from 'ember';
 import config from 'ember-get-config';
 import { FRAGMENT_MAP } from '../utils/mappings';
+import ResetScrollMixin from '../mixins/reset-scroll';
+import Analytics from '../mixins/analytics';
 
 // Adapted from Ember-SHARE > app/routes/detail.js
-export default Ember.Route.extend({
+export default Ember.Route.extend(ResetScrollMixin, Analytics, {
     model(params) {
         return Ember.$.post(`${config.SHARE.apiUrl}/graph/`, {
                 variables: '',
