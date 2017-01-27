@@ -26,9 +26,15 @@ export default Ember.Route.extend({
             return data.data.shareObject;
         });
     },
+    afterModel(model) {
+        // Enforces Retraction type on model
+        if (model.type !== 'Retraction') {
+            this.send('error');
+        }
+    },
     actions: {
-        // error() {
-        //     return this.intermediateTransitionTo('page-not-found');
-        // }
+        error() {
+            return this.intermediateTransitionTo('page-not-found');
+        }
     }
 });
