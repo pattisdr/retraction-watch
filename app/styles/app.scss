@@ -271,26 +271,18 @@ a.blog_link {
 
 /* Retraction Detail Page */
 .title-container {
-    padding-top: 60px;
+    padding-top: 100px;
     font-size: 24px;
+    padding-bottom: 30px;
 
-    position: relative;
-    text-align: center;
+    text-align: left;
     text-shadow: 0 1px 0 rgba(0,0,0,.1);
     background-color: #EEE;
+    border-bottom: 1px solid #DDDDDD;
 
-    h1 {
-      margin-top: 0;
-      line-height: 1;
-      font-size: 40px;
-    }
-
-    p {
-      color: grey;
-      font-size: 18px;
-      font-weight: 300;
-      line-height: 1.4;
-      margin-bottom: 0px;
+    h1.remove-upper-padding {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
     }
 
     .retraction-alert {
@@ -298,6 +290,17 @@ a.blog_link {
         font-size: 14px;
         padding: 10px 30px;
     }
+    .retraction_notice {
+        font-size: 15px;
+    }
+}
+
+.alert {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+.abstract-format {
+    line-height: 30px;
 }
 
 .detail-bottom-padding {
@@ -327,4 +330,10 @@ a.blog_link {
     height: 16px;
     //width: 16px;
     padding-right: 4px;
+}
+
+.retraction-detail-page {
+    h2 {
+        font-size: 26px;
+    }
 }
