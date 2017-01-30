@@ -23,6 +23,6 @@ test('it renders', function(assert) {
         data=data
     }}`);
 
-    assert.equal(this.$().text().trim(), 'This Work Retracts [Creative Work] Terrible paper');
+    assert.equal(this.$()[0].outerText.trim(), "This Work Retracts [Creative Work]  Terrible paper");
 
 });

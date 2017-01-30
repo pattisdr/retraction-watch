@@ -17,5 +17,5 @@ test('it renders', function(assert) {
         work=work
     }}`);
 
-    assert.equal(this.$().context.innerText, '[Article] The Earth is Not Flat');
+    assert.equal(this.$().context.innerText, '[Article]  The Earth is Not Flat');
 });
