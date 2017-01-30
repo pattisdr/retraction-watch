@@ -12,15 +12,13 @@ This guide will help you get started.
 You will need the following things properly installed on your computer.
 
 * [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (preferably via [nvm](https://github.com/creationix/nvm#install-script))
-* [Yarn](https://yarnpkg.com/)
+* [Node.js](http://nodejs.org/) (with NPM)
 * [Bower](http://bower.io/)
 * [Ember CLI](http://ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
 
 ## Installation
-* `git clone` this repository
-* `yarn install --pure-lockfile`
+* `npm install`
 * `bower install`
 
 ## Running / Development
@@ -40,7 +38,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 ### Building
 
 * `ember build` (development)
-* `ember build --environment pxroduction` (production)
+* `ember build --environment production` (production)
 
 ### Deploying
 
