@@ -7,19 +7,21 @@ moduleForComponent('section-sources', 'Integration | Component | section sources
 
 test('it renders', function(assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{section-sources}}`);
+    this.set('model', {
+        sources: [{
+            favicon: "/static/gov.pubmedcentral/img/favicon.ico",
+            id: "gov.pubmedcentral",
+            title: "PubMed Central"
+        }]
+    });
 
-  assert.equal(this.$().text().trim(), '');
+    this.render(hbs`{{section-sources
+        model=model
+    }}`);
 
-  // Template block usage:
-  this.render(hbs`
-    {{#section-sources}}
-      template block text
-    {{/section-sources}}
-  `);
+    assert.equal(this.$().text().trim(), 'PubMed Central');
 
-  assert.equal(this.$().text().trim(), 'template block text');
 });

@@ -7,19 +7,19 @@ moduleForComponent('section-tags', 'Integration | Component | section tags', {
 
 test('it renders', function(assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{section-tags}}`);
+    this.set('model', {
+       tags: [{
+           name: "Test-tag"
+       }]
+    });
 
-  assert.equal(this.$().text().trim(), '');
+    this.render(hbs`{{section-tags
+        model=model
+    }}`);
 
-  // Template block usage:
-  this.render(hbs`
-    {{#section-tags}}
-      template block text
-    {{/section-tags}}
-  `);
+    assert.equal(this.$().text().trim(), 'Test-tag');
 
-  assert.equal(this.$().text().trim(), 'template block text');
 });

@@ -7,19 +7,18 @@ moduleForComponent('section-related-agents', 'Integration | Component | section 
 
 test('it renders', function(assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{section-related-agents}}`);
+    this.set('data', [{
+            id: "12345",
+            name: "Sally Ride",
+            type: "Person"
+        }]
+    );
 
-  assert.equal(this.$().text().trim(), '');
+    this.render(hbs`{{section-related-agents data=data}}`);
 
-  // Template block usage:
-  this.render(hbs`
-    {{#section-related-agents}}
-      template block text
-    {{/section-related-agents}}
-  `);
+    assert.equal(this.$().text().trim(), 'Sally Ride');
 
-  assert.equal(this.$().text().trim(), 'template block text');
 });

@@ -7,19 +7,21 @@ moduleForComponent('section-links', 'Integration | Component | section links', {
 
 test('it renders', function(assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{section-links}}`);
+    this.set('data', [
+        {
+            host: "pubmedcentral.nih.gov",
+            scheme: "oai",
+            uri: "oai://pubmedcentral.nih.gov/5207198"
+        }
+    ]);
 
-  assert.equal(this.$().text().trim(), '');
+    this.render(hbs`{{section-links
+        data=data
+    }}`);
 
-  // Template block usage:
-  this.render(hbs`
-    {{#section-links}}
-      template block text
-    {{/section-links}}
-  `);
+    assert.equal(this.$().text().trim(), 'pubmedcentral.nih.gov');
 
-  assert.equal(this.$().text().trim(), 'template block text');
 });

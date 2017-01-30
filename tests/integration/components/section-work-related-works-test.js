@@ -7,19 +7,22 @@ moduleForComponent('section-work-related-works', 'Integration | Component | sect
 
 test('it renders', function(assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{section-work-related-works}}`);
+    this.set('data', [{
+        type: 'Retracts',
+        related: {
+            id: "12345",
+            title: "Terrible paper",
+            type: "CreativeWork"
+        }
+    }]);
 
-  assert.equal(this.$().text().trim(), '');
+    this.render(hbs`{{section-work-related-works
+        data=data
+    }}`);
 
-  // Template block usage:
-  this.render(hbs`
-    {{#section-work-related-works}}
-      template block text
-    {{/section-work-related-works}}
-  `);
+    assert.equal(this.$().text().trim(), 'This Work Retracts [Creative Work] Terrible paper');
 
-  assert.equal(this.$().text().trim(), 'template block text');
 });
