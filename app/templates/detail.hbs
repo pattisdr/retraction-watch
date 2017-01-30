@@ -16,12 +16,12 @@
                     </div>
                 {{/if}}
                 {{#if retractions}}
-                     <div class="row">
+                    <div class="row">
                         <div class="col-xs-12">
                             <p class="alert alert-warning">
                                 <i class="fa fa-exclamation-triangle"> </i>
                                 {{t "detail.this_is_retraction"}}
-                                 {{#each retractions as |retraction|}}
+                                {{#each retractions as |retraction|}}
                                     <div class="retraction_notice">
                                         {{t "detail.retraction_notice"}}
                                         {{link-to retraction.subject.title 'detail' retraction.subject.id}}
