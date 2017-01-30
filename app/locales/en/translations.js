@@ -18,7 +18,7 @@ export default {
         restart: `Restart`,
         no_results_found: `No results found.`,
         open_science_framework: `Open Science Framework`,
-        retraction: `Retraction`
+        retraction: `Retraction`,
     },
     discover: {
         search: {
@@ -83,5 +83,12 @@ export default {
         'retraction-watch-navbar': {
             toggle: `Toggle navigation`
         }
+    },
+    detail: {
+        no_description: `No description provided.`,
+        retraction_notice: `Retraction Notice`,
+        this_work: `This Work`,
+        untitled: `Untitled`,
+        this_is_retraction: `This work has been retracted.`
     }
 };
