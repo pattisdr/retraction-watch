@@ -1,9 +1,5 @@
-const preprints = `Preprints`;
-const brand = `OSF ${preprints}`;
-
 export default {
     global: {
-        share: `Share`,
         complete: `Complete`,
         cancel: `Cancel`,
         discard: `Discard changes`,
@@ -11,14 +7,8 @@ export default {
         prev: `Prev`,
         next: `Next`,
         none: `None`,
-        abstract: `Abstract`,
-        doi: `DOI`,
-        tags: `Tags`,
         search: `Search`,
-        preprints,
-        brand,
         retraction_watch: `Retraction Watch`,
-        brand_name: 'OSF',
         retraction_watch_database: `Retraction Watch Database`,
         browse: `Browse`,
         blog: `Blog`,
@@ -27,9 +17,8 @@ export default {
         add: `Add`,
         restart: `Restart`,
         no_results_found: `No results found.`,
-        authors: `Authors`,
         open_science_framework: `Open Science Framework`,
-        retraction: `Retraction`
+        retraction: `Retraction`,
     },
     discover: {
         search: {
@@ -39,13 +28,11 @@ export default {
         },
         sort_by: `Sort by`,
         main: {
-            active_filters: {
-                heading: `Active Filters`,
-                button: `Clear filters`
-            },
-            refine: `Refine your search by`,
+            clear_filters: `Clear filters`,
             date: `Date`,
+            source: `Source`,
             type: `Type`,
+            tag: `Tag`,
             subject: `Subject`,
             publisher: `Publisher`,
             funder: `Funder`,
@@ -57,14 +44,14 @@ export default {
                 of: `of`,
                 no_results: `Try broadening your search terms`
             },
-            otherRepositories: `Other preprint repositories`,
+        },
+        sort: {
+            relevance: `Relevance`,
+            date_published_desc: `Date Published (Desc)`,
+            date_published_asc: `Date Published (Asc)`
         }
     },
     index: {
-        header: {
-            search_retraction_database: `Search retraction database...`,
-            powered_by: `Powered by ${brand}`,
-        },
         browse: {
             explanation1: `We record instances of scientific retractions from journals and publish them in a comprehensive open database. `,
             explanation2: `We believe that retractions are a real-time window into the self-correcting nature of the scientific process, `,
@@ -72,47 +59,36 @@ export default {
             explanation4: `blog`,
             explanation5: ` in 2010 that they're far more common than we initially thought.`,
             button: `Browse`
-
         },
         latest_blog_posts: `Latest blog posts`,
+        blog_error: `Blog posts cannot be retrieved at this time.`
     },
     'page-not-found': {
         heading: `Page not found`,
         paragraph: {
-            line1: `The page you were looking for is not found on the {{brand}} service.`,
+            line1: `The page you were looking for is not found on the Retraction Watch database service.`,
             line2: `If this should not have occurred and the issue persists, please report it to`
         },
-        go_to: `Go to {{brand}}`
+        go_to: `Go to {{service}}`
     },
-    'page-forbidden': {
-        heading: `Forbidden`,
-        paragraph: {
-            line1: `User has restricted access to this page. If this should not have occurred and the issue persists, please report it to `,
-        },
-        go_to: `Go to {{brand}}`
-    },
-    'resource-deleted': {
-        heading: `Resource deleted`,
-        paragraph: {
-            line1: `User has deleted this content. If this should not have occurred and the issue persists, please report it to  `,
-        },
-        go_to: `Go to {{brand}}`
-    },
-
     components: {
-        'preprint-footer-branded': {
+        'retraction-watch-footer': {
             twitter: 'Twitter',
             facebook: 'Facebook',
             instagram: 'Instagram',
             support: `Support`,
-            contact: `Contact`
+            contact: `Contact`,
+            blog: `Blog`
         },
-        'preprint-navbar': {
+        'retraction-watch-navbar': {
             toggle: `Toggle navigation`
-        },
-        'preprint-navbar-branded': {
-            my_projects: `My OSF Projects`,
-            headline: `On the OSF`,
         }
+    },
+    detail: {
+        no_description: `No description provided.`,
+        retraction_notice: `Retraction Notice`,
+        this_work: `This Work`,
+        untitled: `Untitled`,
+        this_is_retraction: `This work has been retracted.`
     }
 };

@@ -1,10 +1,10 @@
 # retraction-watch
 
-`master` Build Status: [![Build Status](https://travis-ci.org/CenterForOpenScience/ember-preprints.svg?branch=master)](https://travis-ci.org/CenterForOpenScience/ember-preprints)
+`master` Build Status: [![Build Status](https://travis-ci.org/CenterForOpenScience/retraction-watch.svg?branch=master)](https://travis-ci.org/CenterForOpenScience/retraction-watch)
 
-`develop` Build Status: [![Build Status](https://travis-ci.org/CenterForOpenScience/ember-preprints.svg?branch=develop)](https://travis-ci.org/CenterForOpenScience/ember-preprints)
+`develop` Build Status: [![Build Status](https://travis-ci.org/CenterForOpenScience/retraction-watch.svg?branch=develop)](https://travis-ci.org/CenterForOpenScience/retraction-watch)
 
-This is the codebase for the retraction-watch database, powered by SHARE.
+This is the codebase for the Retraction Watch Database, powered by SHARE.
 This guide will help you get started.
 
 ## Prerequisites
@@ -22,25 +22,9 @@ You will need the following things properly installed on your computer.
 * `bower install`
 
 ## Running / Development
-For local development, this is designed to run alongside (and from within) the flask application for osf.io.
 
-1. Check out this OSF feature branch: https://github.com/pattisdr/retraction-watch.git
-2. Start your Ember server: `ember serve`
-3. Copy these lines to your `website/settings/local.py` file and restart your flask app.
-```python
-    USE_EXTERNAL_EMBER = True
-    EXTERNAL_EMBER_APPS = {
-        'retraction-watch': {
-            'url': '/retraction-watch/',
-            'server': 'http://localhost:4200',
-            'path': '../retraction-watch/dist/'
-        }
-    }
-```
-4. Visit your app at http://localhost:5000/retraction-watch/ (temporary URL)
-
-If you encounter problems, make sure that your version of ember-osf is up to date. If login fails, try logging in from 
-any other OSF page, then returning to the retraction-watch app.
+* `ember serve`
+* Visit your app at [http://localhost:4200](http://localhost:4200).
 
 ### Code Generators
 
@@ -56,12 +40,18 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
+### Deploying
+
+Specify what it takes to deploy your app.
+
 ## Further Reading / Useful Links
 
-* [Requirements and road map for this service](https://docs.google.com/spreadsheets/d/1SocElbBjc_Nhme4-SJv2_zytBd1ys8R5aZDb3POe94c/edit#gid=1340026270)
 * [ember.js](http://emberjs.com/)
 * [ember-cli](http://ember-cli.com/)
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
+
+
+If you encounter problems, make sure that your version of ember-osf is up to date. 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns#">
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +9,10 @@
 
     {{content-for "head"}}
 
-    <link rel="stylesheet" href="{{rootURL}}retraction-watch/assets/vendor.css">
-    <link rel="stylesheet" href="{{rootURL}}retraction-watch/assets/preprint-service.css">
+    <link rel="icon" href="/assets/img/rw-favicon.ico">
+
+    <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/retraction-watch.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700' rel='stylesheet' type='text/css'>
 
     {{content-for "head-footer"}}
@@ -29,8 +31,8 @@
 
     {{content-for "cdn"}}
 
-    <script src="{{rootURL}}retraction-watch/assets/vendor.js"></script>
-    <script src="{{rootURL}}retraction-watch/assets/preprint-service.js"></script>
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/retraction-watch.js"></script>
 
     {{content-for "raven"}}
 

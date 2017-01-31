@@ -1,0 +1,10 @@
+{{!Copied from Ember-SHARE and added translations}}
+<ul>
+    {{#each data as |relation index|}}
+        {{#if relation.subject}}
+            <li>{{link-to-work work=relation.subject}} {{prettify relation.type}} {{t "detail.this_work"}} </li>
+        {{else}}
+            <li> {{t "detail.this_work"}} {{prettify relation.type}} {{link-to-work work=relation.related}}</li>
+        {{/if}}
+    {{/each}}
+</ul>

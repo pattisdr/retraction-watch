@@ -1,15 +1,15 @@
 /* jshint node: true */
 
 module.exports = function(environment) {
-    var authorizationType = 'cookie';
+    var authorizationType = 'token';
 
     var ENV = {
-        modulePrefix: 'preprint-service',
+        authorizationType: authorizationType,
+        modulePrefix: 'retraction-watch',
         environment: environment,
         rootURL: '/',
-        feedURL: 'http://retractionwatch.com/feed/',
+        feedURL: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D'retractionwatch.com%2Ffeed'&diagnostics=true",
         locationType: 'auto',
-        authorizationType: authorizationType,
         sentryDSN: 'http://test@localhost/80' || process.env.SENTRY_DSN,
         'ember-simple-auth': {
             authorizer: `authorizer:osf-${authorizationType}`,
@@ -27,53 +27,11 @@ module.exports = function(environment) {
         },
         SHARE: {
             baseUrl: process.env.SHARE_BASE_URL || 'https://staging-share.osf.io/',
+            apiUrl: process.env.SHARE_API_URL || 'https://staging-share.osf.io/api/v2',
             searchUrl: process.env.SHARE_SEARCH_URL || 'https://staging-share.osf.io/api/v2/search/creativeworks/_search'
         },
         moment: {
             outputFormat: 'YYYY-MM-DD hh:mm a'
-        },
-        PREPRINTS: {
-            defaultProvider: 'osf',
-
-            // Logos are needed for open graph sharing meta tags (Facebook, LinkedIn, etc) and must be at least 200x200
-            providers: [
-                {
-                    id: 'osf',
-                    logoSharing: {
-                        path: '/assets/img/provider_logos/osf-dark.png',
-                        type: 'image/png',
-                        width: 363,
-                        height: 242
-                    }
-                },
-                {
-                    id: 'engrxiv',
-                    logoSharing: {
-                        path: '/assets/img/provider_logos/engrxiv-sharing.png',
-                        type: 'image/png',
-                        width: 1200,
-                        height: 488
-                    }
-                },
-                {
-                    id: 'psyarxiv',
-                    logoSharing: {
-                        path: '/assets/img/provider_logos/psyarxiv-sharing.png',
-                        type: 'image/png',
-                        width: 1200,
-                        height: 488
-                    }
-                },
-                {
-                    id: 'socarxiv',
-                    logoSharing: {
-                        path: '/assets/img/provider_logos/socarxiv-sharing.png',
-                        type: 'image/png',
-                        width: 1200,
-                        height: 488
-                    }
-                }
-            ],
         },
         i18n: {
             defaultLocale: 'en'
@@ -97,13 +55,14 @@ module.exports = function(environment) {
         // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
         // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
-        ENV.metricsAdapters[0].config.cookieDomain = 'none'
+        ENV.metricsAdapters[0].config.cookieDomain = 'none';
     }
 
     if (environment === 'test') {
         // Testem prefers this...
-        // ENV.baseURL = '/';
+        ENV.baseURL = '/';
         ENV.locationType = 'none';
+        ENV.feedURL = '/nowhere';
 
         // keep test console output quieter
         ENV.APP.LOG_ACTIVE_GENERATION = false;
@@ -116,21 +75,12 @@ module.exports = function(environment) {
         ENV.SHARE.baseUrl = '/nowhere';
         ENV.SHARE.searchUrl = '/nowhere';
 
-        ENV.metricsAdapters[0].config.cookieDomain = 'none'
+        ENV.metricsAdapters[0].config.cookieDomain = 'none';
     }
 
     if (environment === 'production') {
         ENV.sentryDSN = process.env.SENTRY_DSN || 'https://2f0a61d03b99480ea11e259edec18bd9@sentry.cos.io/45';
         ENV.ASSET_SUFFIX = process.env.GIT_COMMIT || 'git_commit_env_not_set';
-    }
-
-    if (ENV.ASSET_SUFFIX) {
-        ENV.PREPRINTS.providers = ENV.PREPRINTS.providers.map(provider => {
-            provider.logoSharing.path = provider.logoSharing.path
-                .replace(/\..*$/, match => `-${ENV.ASSET_SUFFIX}${match}`);
-
-            return provider;
-        });
     }
 
     return ENV;

@@ -13,18 +13,8 @@ module.exports = function(defaults) {
     const useCdn = (nonCdnEnvironments.indexOf(process.env.EMBER_ENV) === -1);
 
     const css = {
-        'app': '/assets/preprint-service.css'
+        'app': '/assets/retraction-watch.css'
     };
-
-    const brands = fs.readdirSync('./app/styles/brands');
-
-    for (let brand of brands) {
-        if (/^_/.test(brand))
-            continue;
-
-        brand = brand.replace(/\..*$/, '');
-        css[`brands/${brand}`] = `/assets/css/${brand}.css`;
-    }
 
     // Reference: https://github.com/travis-ci/travis-web/blob/master/ember-cli-build.js
     var app = new EmberApp(defaults, {
@@ -42,7 +32,7 @@ module.exports = function(defaults) {
         'ember-bootstrap': {
             importBootstrapCSS: false
         },
-        // Needed for branded themes
+        // Needed for branded themes CAN THIS BE DELETED??
         fingerprint: {
             customHash: config.ASSET_SUFFIX,
         },
@@ -56,7 +46,9 @@ module.exports = function(defaults) {
                 'node_modules/ember-osf/addon/styles',
                 'bower_components/bootstrap-sass/assets/stylesheets',
                 'bower_components/osf-style/sass',
-                'bower_components/hint.css'
+                'bower_components/hint.css',
+                'bower_components/c3',
+                'bower_components/bootstrap-daterangepicker',
             ]
         },
         inlineContent: {
@@ -125,20 +117,14 @@ module.exports = function(defaults) {
     app.import(path.join(app.bowerDirectory, 'osf-style/css/base.css'));
     app.import(path.join(app.bowerDirectory, 'loaders.css/loaders.min.css'));
 
-
     app.import(path.join(app.bowerDirectory, 'osf-style/img/cos-white2.png'), {
         destDir: 'img'
     });
 
-    // app.import('bower_components/dropzone/dist/dropzone.js');
+    app.import(path.join(app.bowerDirectory, 'bootstrap-daterangepicker/daterangepicker.js'));
+    app.import(path.join(app.bowerDirectory, 'c3/c3.js'));
+
     app.import({
-        development: path.join(app.bowerDirectory, 'dropzone/dist/dropzone.css'),
-        production: path.join(app.bowerDirectory, 'dropzone/dist/min/dropzone.min.css')
-    });
-
-    app.import(path.join(app.bowerDirectory, 'jquery.tagsinput/src/jquery.tagsinput.js'));
-
-     app.import({
         development: path.join(app.bowerDirectory, 'hint.css/hint.css'),
         production: path.join(app.bowerDirectory, 'hint.css/hint.css')
     });

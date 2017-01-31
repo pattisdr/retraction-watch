@@ -23,11 +23,10 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
     this.route('page-not-found', {path: '/*bad_url'});
-    this.route('index', {path: 'retraction-watch'});
-    this.route('page-not-found', {path: 'retraction-watch/page-not-found'});
-    this.route('discover', {path: 'retraction-watch/discover'});
-    this.route('forbidden');
-    this.route('resource-deleted');
+    this.route('index', {path: '/'});
+    this.route('page-not-found', {path: 'page-not-found'});
+    this.route('discover', {path: 'discover'});
+    this.route('detail', {path: '/retraction/:retraction_id'});
 });
 
 export default Router;

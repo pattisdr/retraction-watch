@@ -2,276 +2,10 @@
 @import 'ember-power-select';
 @import 'base';
 @import 'variables';
-@import 'validated-input';
 @import 'hint';
+@import 'daterangepicker.scss';
 
-/* INDEX page */
-/* Global to index */
-
-/* Main header with search bar */
-.retraction-watch-header{
-    background: white;
-    padding-top: 125px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #dddddd;
-    color: white;
-    h1 {
-        font-size: 41px;
-        font-weight: 300;
-    }
-    a:not(.btn) {
-        color: #80c2f7;
-        text-decoration: underline;
-    }
-    .btn-info {
-        color: #fff
-    }
-
-}
-
-.retraction-watch-brand {
-    background: url('img/retraction-watch-logo.png') top center no-repeat;
-    height: 175px;
-    background-size: contain;
-}
-
-.retraction-watch-browse-button {
-    background: #5B2023;
-    color: white;
-    border-radius: 20px;
-    -moz-border-radius: 20px;
-    padding: 10px;
-    padding-left: 70px;
-    padding-right: 70px;
-    &:link {
-        color: white;
-    }
-    &:visited {
-        color: white;
-    }
-    &:hover {
-        text-decoration: None;
-        color: white;
-        background: #2E5374;
-    }
-}
-
-.blog-loading {
-    color: #2E5374;
-}
-
-.badge {
-    background: #2E5374 !important;
-}
-
-.retraction-watch-explanation {
-    color: #5B2023;
-    text-align: center;
-    font-size: 1.35em;
-}
-
-a.blog_link {
-    text-decoration: underline;
-    &:link {
-        color: #5B2023;
-    }
-    &:visited {
-        color: #5B2023;
-    }
-    &:hover {
-        color: #2E5374;
-    }
-    display: inline-block;
-}
-
-/* Browse Retraction Watch */
-.browse-retraction-watch {
-    background-color: #f1f3f2;
-    border-bottom: 1px solid #DDDDDD;
-    .subject-item a {
-        width: 100%;
-        font-size: 17px;
-    }
-}
-
-.blog-post-heading {
-    color: #5B2023;
-}
-
-/* Retraction Watch navbar */
-.retraction-watch-navbar {
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    padding: 0;
-    background: #5B2023;
-    z-index: 99;
-    box-shadow: 0 0 4px #525151;
-    border-radius: 0;
-    a {
-        color: #ffffff;
-    }
-    .nav > li > a:hover, .nav > li > a.active, .navbar-brand:hover {
-        background-color: #5B2023;
-        color: #a4c1db;
-
-    }
-    .nav > li > a:focus:not(.active) {
-        background-color: transparent;
-    }
-    .navbar-brand a {
-        text-decoration: none;
-    }
-    .navbar-brand a:hover {
-        text-decoration: none;
-    }
-    .navbar-toggle {
-        color: #eeeeee;
-    }
-}
-
-#retraction-watch-navbar-links {
-    a:hover {
-        color: #a4c1db;
-    }
-}
-
-.individual-blog-links a {
-    color: #2E5374;
-    line-height: 10px;
-}
-
-.blog-posts-block {
-    border-left: 1px solid #2E5374;
-}
-
-.blog-title a {
-    color: #5B2023;
-    text-decoration: none;
-    &:hover {
-        color: #2E5374;
-    }
-}
-
-
-.retraction-watch-footer {
-    padding: 8px;
-    bottom: 0px;
-    width: 100%;
-    background: #5B2023;
-    color: white;
-    a {
-        color: #ffffff;
-        &:hover {
-            color: #a4c1db;
-            text-decoration: None;
-        }
-    }
-}
-
-/* Override styles from ember-osf and osf */
-.footer {
-    margin-top: 0;
-    text-shadow: 0 1px 0 #fff;
-    border-top: 1px solid #e5e5e5;
-    border-bottom: 1px solid #e5e5e5;
-    width: 100%;
-    color: #555;
-}
-
-.footer ul, .footer li {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-}
-
-/* SEARCH page */
-/* Global to search */
-.retraction-watch-search-main {
-    background-color: #fbfbfb;
-    border-bottom: 1px solid #dedede;
-    .filter-heading {
-        background-color: #5B2023;
-        color:white;
-        text-align: center;
-    }
-    label {
-        font-weight: normal;
-    }
-    .preprint-search-sidebar ul {
-        padding-left: 25px;
-        li {
-            list-style: none;
-        }
-    }
-    .search-result {
-        margin-bottom: 10px;
-        word-wrap: break-word;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        box-shadow : 0 1px 2px #ddd;
-        border: none;
-        h4 {
-            font-weight: normal;
-        }
-    }
-}
-
-/* Header panel */
-.retraction-watch-search-header {
-    padding-top: 120px;
-    background: white;
-    background-size: cover;
-    .share-logo {
-        width: 46px;
-        height: 22px;
-        background: url('img/share-logo-icon.png') no-repeat;
-        display: inline-block;
-        background-size: contain;
-        vertical-align: middle;
-    }
-}
-
-.copyright {
-    color: white;
-    a:hover {
-        text-decoration: None;
-        color: #a4c1db;
-    }
-}
-
-.retraction-filters {
-    background: #2E5374;
-    color: white;
-    padding: 3px;
-    text-align: center;
-    border: 1px solid #CCCCCC
-
-}
-
-
-.retraction-watch-footer-links {
-    line-height: 15px;
-    color: white;
-    a:hover {
-        color: #a4c1db;
-    }
-
-    div {
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    .social > a {
-        margin: 0 4px;
-    }
-
-    .social > a:hover {
-        text-decoration: none;
-    }
-}
-
-/* GLOBAL to PREPRINTS, these may be used in multiple pages */
+/* GLOBAL to RETRACTION WATCH, these may be used in multiple pages */
 .pointer {
     cursor: pointer;
 }
@@ -296,844 +30,310 @@ ul.comma-list {
         content: "";
     }
 }
-.subject-preview {
-    display: inline-block;
-    background-color: #f8f8f8;
-    border-radius: 3px;
-    border: 1px solid #eee;
-    padding: 1px 7px;
-    margin-bottom: 4px;
-}
-/* This should be a temporary adjustment */
-@media (max-width: 768px) {
-    .preprint-navbar {
-        top: 50px;
+
+/* INDEX page of Retraction Watch */
+/* Main header with search bar */
+.retraction-watch-header{
+    background: white;
+    padding-top: 125px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $rw-light-gray;
+    color: white;
+    h1 {
+        font-size: 41px;
+        font-weight: 300;
+    }
+    a:not(.btn) {
+        color: #80c2f7;
+        text-decoration: underline;
+    }
+    .btn-info {
+        color: #fff
     }
 }
 
-/* Recent uploads list panel */
-.preprint-list {
-    background: #fbfbfb;
-    border-bottom: 1px solid #eee;
+/* Retraction Watch Logo */
+.retraction-watch-brand {
+    background: url('img/retraction-watch-logo.png') top center no-repeat;
+    height: 175px;
+    background-size: contain;
 }
 
-/* Preprint providers and become provider */
-.preprint-tool {
-    background: #cbd9d5 url('img/index-tool-bg.jpg') top center;
-    color: #FFFFFF;
-    text-shadow: 0 0 5px #506069;
-    background-size: cover;
-    .provider-logo {
-        height: 120px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-}
-
-$logo-dir: 'img/provider_logos/';
-
-.provider-osf {
-    background-image: url($logo-dir + 'osf-small.png');
-}
-.provider-osf-dark {
-    background-image: url($logo-dir + 'osf-dark-small.png');
-}
-
-.provider-socarxiv {
-    background-image: url($logo-dir + 'socarxiv-small.png');
-}
-.provider-socarxiv-dark {
-    background-image: url($logo-dir + 'socarxiv-dark-small.png');
-}
-
-.provider-engrxiv {
-    background-image: url($logo-dir + 'engrxiv-small.png');
-}
-.provider-engrxiv-dark {
-    background-image: url($logo-dir + 'engrxiv-dark-small.png');
-}
-
-.provider-psyarxiv {
-    background-image: url($logo-dir + 'psyarxiv-small.png');
-}
-.provider-psyarxiv-dark {
-    background-image: url($logo-dir + 'psyarxiv-dark-small.png');
-}
-
-@media (max-width: 768px) {
-    .subject-item {
-        margin-bottom: 5px;
-    }
-    .subject.row {
-        margin-bottom: 0;
-    }
-    .provider-logo {
-        margin-bottom: 15px;
-    }
-}
-
-.preprint-filter {
-    margin: 2px;
-    padding: 0px 6px;
-    line-height: 30px;
-    border: 1px solid #e3e3e3;
-    border-radius: 2px;
-    display: inline-block;
-}
-.provider-filter {
-    background-color: #578ca2;
-    color: #eeeeee;
-}
-.subject-filter {
-    background-color: #d7e6e9;
-    .fa {
-        color: #777777;
-    }
-}
-.search-result-providers {
-    font-weight: bold;
-}
-ul.preprints-block-list {
-    display: block;
-    list-style: none;
-    padding-left: 0;
-}
-
-
-/* VIEW page */
-
-.dark-overlay-header-background {
-    background: #343333 url("img/dark-overlay.png") top center;
-}
-#view-page {
-    background-color: #FCFCFC;
-    font-family : 'Open Sans', Helvetica, sans-serif;
-    .osf-box-lt {
-        background-color: #F3F5F5;
-    }
-    .header-row {
-        color: #ffffff;
-        padding-top: 90px;
-    }
-    .view-authors {
-        color: #337ab7;
-        a {
-            color: #6dd1de;
-        }
-    }
-    .round-btn {
-        border-radius: 25px;
-        background-color: #4c4c4c;
+/* Browse Button */
+.retraction-watch-browse-button {
+    background: $rw-brown;
+    color: white;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    padding: 10px;
+    padding-left: 70px;
+    padding-right: 70px;
+    &:link {
         color: white;
     }
-    #mfr-col {
-        position: relative;
-        .expand-mfr-carrot {
-            position: absolute;
-            right: 0;
-            top: 0;
-            color: #888888;
-            background: 0;
-            border: 0;
-            outline: none;
+    &:visited {
+        color: white;
+    }
+    &:hover {
+        text-decoration: None;
+        color: white;
+        background: $rw-navy;
+    }
+}
+
+/* Browse Retraction Watch */
+.browse-retraction-watch {
+    background-color: $rw-gray-background;
+    border-bottom: 1px solid $rw-light-gray;
+    .subject-item a {
+        width: 100%;
+        font-size: 17px;
+    }
+}
+
+/* Blog Posts */
+.blog-loading {
+    color: $rw-navy;
+}
+
+.blog-post-heading {
+    color: $rw-brown;
+}
+
+a.blog_link {
+    text-decoration: underline;
+    &:link {
+        color: $rw-brown;
+    }
+    &:visited {
+        color: $rw-brown;
+    }
+    &:hover {
+        color: $rw-navy;
+    }
+    display: inline-block;
+}
+
+.blog-posts-block {
+    border-left: 1px solid $rw-navy;
+}
+
+.blog-title a {
+    color: $rw-brown;
+    text-decoration: none;
+    &:hover {
+        color: $rw-navy;
+    }
+}
+
+.individual-blog-links a {
+    color: $rw-navy;
+    line-height: 10px;
+}
+
+/* Summary of Retraction Watch */
+.retraction-watch-explanation {
+    color: $rw-brown;
+    text-align: center;
+    font-size: 1.35em;
+}
+
+/* Retraction Watch navbar */
+.retraction-watch-navbar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    padding: 0;
+    background: $rw-brown;
+    z-index: 99;
+    box-shadow: 0 0 4px #525151;
+    border-radius: 0;
+    a {
+        color: #ffffff;
+    }
+    .nav > li > a:hover, .nav > li > a.active, .navbar-brand:hover {
+        background-color: $rw-brown;
+        color: #a4c1db;
+
+    }
+    .nav > li > a:focus:not(.active) {
+        background-color: transparent;
+    }
+    .navbar-brand a {
+        text-decoration: none;
+    }
+    .navbar-brand a:hover {
+        text-decoration: none;
+    }
+    .navbar-toggle {
+        color: #eeeeee;
+    }
+}
+
+#retraction-watch-navbar-links {
+    a:hover {
+        color: #a4c1db;
+    }
+}
+
+/* Retraction Watch Footer */
+.retraction-watch-footer {
+    padding: 8px;
+    bottom: 0px;
+    width: 100%;
+    background: $rw-brown;
+    color: white;
+    a {
+        color: #ffffff;
+        &:hover {
+            color: #a4c1db;
+            text-decoration: None;
         }
     }
-    .abstract {
-        white-space: pre-line;
+}
+
+.retraction-watch-footer-links {
+    line-height: 15px;
+    color: white;
+    a:hover {
+        color: #a4c1db;
     }
-    .project-box {
-        div {
-            min-height: 100px;
+
+    div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .social > a {
+        margin: 0 4px;
+    }
+
+    .social > a:hover {
+        text-decoration: none;
+    }
+}
+
+
+/* Override styles from ember-osf and osf */
+.footer {
+    margin-top: 0;
+    text-shadow: 0 1px 0 #fff;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    width: 100%;
+    color: #555;
+}
+
+.footer ul, .footer li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+/* DISCOVER PAGE */
+// Overrides defaults on ember-osf addon component: ember-share-search
+.ember-share-search {
+    .service-logo {
+        background: url('img/retraction-watch-logo.png') top center no-repeat;
+        height: 175px;
+        background-size: contain;
+    }
+    .panel-default {
+        > .panel-heading {
+            background-color: $rw-brown !important;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
         }
     }
 }
 
 /* Not found page */
-.preprint-404 {
+.retraction-watch-404 {
     padding: 120px 0 120px 0;
     background-color: #ecf2f3;
     border-bottom: 1px solid #d6dbdc;
-}
-
-/* Forbidden page */
-.preprint-403 {
-    padding: 120px 0 120px 0;
-    background-color: #ecf2f3;
-    border-bottom: 1px solid #d6dbdc;
-}
-
-/* Gone page */
-.preprint-410 {
-    padding: 120px 0 120px 0;
-    background-color: #ecf2f3;
-    border-bottom: 1px solid #d6dbdc;
-}
-
-/* Usefulness of the portions of code below is doubtful, mixed with critical and unused. TODO: Go through and clean up unused code */
-
-
-.no-transition {
-    transition: none !important;
-}
-
-
-
-.icon-circle {
-    display: inline-block;
-    border-radius: 60px;
-    width: 100px;
-    height: 100px;
-    padding-top: 20px;
-    border: 3px solid #D3E1EE;
-}
-
-.icon-bar .fa-custom-7x {
-    font-size: 50px;
-}
-
-.org-logo {
-    transform: translateY(50%);
-    img {
-        padding: 20px 20% 0 20%;
-    }
-    div {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-}
-
-.blue-icon {
-    color: #337AB7;
-}
-
-.osf-preprint-p {
-    font-size: 16px;
-}
-
-.network-img {
-    background: url("/static/img/meeting-page/network-web.png") repeat;
-    background-size: contain;
-    height: 1000px;
-    margin-bottom: -1000px;
-    opacity: 0.35;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
-}
-
-.grey-background {
-    background-color: #FFF;
-    z-index: 2;
-    position: relative;
-}
-
-.preprint-feature .btn {
-    color: white;
-    border-color: white;
-    border-width: 4px;
-    &:hover {
-        background-color: #204762;
-    }
-}
-
-.modal {
-    color: #333;
-}
-
-
-// FOR SUBJECTS LIST ON INDEX
-.subjectList img {
-    opacity: 1.0;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .2);
-}
-
-.logo {
-    width: 150px;
-    height: 150px;
-}
-
-.logo-sm {
-    width: 30px;
-    height: 30px;
-}
-
-.row-fluid {
-    overflow: auto;
-    white-space: nowrap;
-
-    &.col-sm-6 {
-        display: inline-block;
-    }
-}
-
-#browse {
-    .read-more-toggle-custom {
-        color: #337AB7;
+    .btn {
+        background-color: $rw-navy;
         &:hover {
-            color: #337AB7;
-        }
-        &:visited {
-            color: #337AB7;
+            background-color: gray;
+            border: 1px solid gray;
         }
     }
 }
 
-
-
-// FOR FORMS ON THE PREPRINTS AND ADD-PREPRINTS PAGE
-
-.show-more-button {
-    background: 0;
-    border: 0;
-    outline: none;
-    font-size: 2em;
-}
-
-.smallTag{
-    text-align:center;
-    padding:0.4em;
-    border-radius:5px;
-    float:left;
-    margin:5px;
-    margin-left:0px;
-    margin-bottom:0px;
-    font-size:12px;
-    color: white;
-}
-
-.date {
-    background-color:#4c4c4c;
-}
-
-.subjectTag {
-    background-color:#006400;
-}
-
-.article{
-    padding-top:1.1em;
-}
-hr {
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    border-style: inset;
-    border-width: 1px;
-}
-
-#right_panel {
-    margin-right: 20px;
-}
-
-.prereg-button {
-    text-align:center;
-    cursor: pointer;
-}
-.active-custom {
-    background-color: #166595;
-    color: white;
-}
-
-.cp-Panel.cp-is-closed .cp-Panel-body {
-    height: 0;
-    overflow: hidden;
-}
-
-.preprint-form-section {
-    header {
-        @extend a;
-        cursor: pointer;
-        font: {
-            size: 16px;
-            font-weight: bold;
-        }
-        display: block;
-        margin: 1rem 0;
-        &:hover, &:focus {
-            text-decoration: none;
-        }
-        &:after {
-            content: "";
-            display: block;
-            width: 100%;
-            clear: both;
-        }
-        &.cp-is-open {
-            cursor: default;
-            color: #333;
-        }
-        &.valid {
-            .preprint-section-status .fa {
-                color: #488132;
-            }
-        }
-        &.invalid {
-            .preprint-section-status .fa {
-                color: #b64949;
-            }
-        }
-        &.not-validated {
-            .preprint-section-status .fa {
-                color: gray;
-            }
-        }
-        .fa {
-            font-size: 20px;
-        }
-        .preprint-section-status .fa {
-            transition: color 0.1s linear;
-        }
-    }
-    .cp-Panel-body {
-        opacity: 0;
-        overflow: hidden;
-        transition: {
-            property: height, opacity;
-            duration: 0.2s;
-            timing-function: linear;
-        }
-        &.cp-is-open {
-            opacity: 1;
-        }
-    }
-    // THESE STYLES ARE INTERFERING WITH MY STYLES.
-    // .row {
-    //     margin: 0;
-    // }
-    // label, input, textarea {
-    //     display: block;
-    // }
-    label > input, label > textarea {
-        font-weight: normal;
-    }
-    textarea {
-        resize: none;
-    }
+.badge {
+    background: $rw-navy !important;
 }
 
 
+/* Retraction Detail Page */
+.title-container {
+    padding-top: 100px;
+    font-size: 24px;
+    padding-bottom: 30px;
 
-#preprint-form-basics {
-    span.required:after {
-        content: "(required)";
-        color: lighten(red, 30%);
-        font-weight: normal;
-        float: right;
-    }
-}
+    text-align: left;
+    text-shadow: 0 1px 0 rgba(0,0,0,.1);
+    background-color: #EEE;
+    border-bottom: 1px solid #DDDDDD;
 
-#preprint-form-subjects {
-    .subject {
-        background-color: $brand-primary;
-        display: inline-block;
-        color: white;
-        overflow: hidden;
-        padding: 0 2rem;
-        margin-right: 2rem;
-        margin-bottom: 1rem;
-        border-radius: 2px;
-        transition: background-color 0.1s linear;
-        &:hover {
-            background-color: lighten($brand-primary, 10%);
-            & > b:after {
-                border-left-color: lighten($brand-primary, 10%);
-            }
-        }
-        & > b {
-            display: inline-block;
-            padding: 5px 12px ;
-            position: relative;
-            border-radius: 4px;
-            &%pseudo {
-                content: '';
-                display: block;
-                position: absolute;
-                width: 0;
-                height: 0;
-                left: 100%;
-                top: 50%;
-                margin-top: -5rem;
-                border: {
-                    style: solid;
-                    width: 5rem 0 5rem 3rem;
-                    color: transparent transparent transparent $brand-primary;
-                }
-            }
-            &:before {
-                @extend %pseudo;
-                margin-left: 1px;
-                border-left-color: white;
-                z-index: 1;
-            }
-            &:after {
-                @extend %pseudo;
-                transition: border-color 0.1s linear;
-                z-index: 2;
-            }
-            &:first-child {
-                padding-left: 0;
-            }
-            &:last-of-type {
-                padding-right: 2rem;
-                &:before, &:after {
-                    display: none;
-                }
-            }
-            & + b {
-                margin-left: 2rem;
-            }
-        }
-        & > .fa {
-            color: white;
-            cursor: pointer;
-            transition: color 0.1s linear;
-            &:hover {
-                color: lighten(red, 40%);
-            }
-            &:active {
-                color: lighten(red, 20%);
-            }
-        }
-    }
-    ul {
-        height: 30rem;
-        list-style: none;
-        padding: 0;
-        border: 1px lightgray solid;
-        overflow: hidden;
-        input {
-            border-style: none none solid none;
-            box-shadow: none;
-        }
-        li {
-            padding: 0.5rem 1.5rem;
-            cursor: pointer;
-            border-radius: 4px;
-            margin: 0.5rem;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            position: relative;
-            transition: {
-                property: background-color, color, font-weight;
-                duration: 0.1s;
-                timing-function: linear;
-            }
-            &:hover {
-                background-color: $theme-color-light;
-                color: #ffffff;
-            }
-            &:active, &.selected {
-                background-color: #337AB7;
-                color: white;
-                font-weight: bold;
-                white-space: normal;
-            }
-            & + li {
-                margin-top: 0;
-            }
-        }
-    }
-}
-
-#preprint-form-submit {
-
-}
-
-.preprint-providers {
-
-}
-
-
-//For Supplementary File Widget
-#preprint-file-view {
-    section {
-        position: relative;
-        button {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            &.left {
-                left: 0;
-            }
-            &.right {
-                right: 0;
-            }
-        }
-        .file-selected-arrow {
-            color: #578ca2;
-            position: absolute;
-            top: -20px;
-            font-size: xx-large;
-            margin: 0 auto;
-        }
+    h1.remove-upper-padding {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
     }
 
-    .osf-box{
-        height: 100px;
-        width: 100%;
-        background-color: white;
-    }
-    .box{
-        background-color: white;
-        text-align: center;
-        cursor: pointer;
-        &.selected{
-            background-color: #F3F5F5;
-        }
-        &:hover {
-            border-color: #337AB7;
-        }
-    }
-    .show-more-button {
-        color: #F3F5F5;
-        background: #D8D8D8;
-        font-size: 2em;
-    }
-}
-
-.file-browser {
-    a {
-        cursor: pointer;
-    }
-
-    .breadcrumb {
-        margin-bottom: 0;
-    }
-
-    .file-browser-list {
-        position: relative;
-        height: 200px;
-    }
-
-    .file-browser-item {
-        height: 30px;
-        padding: 3px 3px 3px 25px;
-    }
-
-    .file-browser-item:hover {
-        background-color: #E0EBF3; /* $color-hover; */
-    }
-
-    .file-browser-icon {
-        width: 3em;
-        display: inline-block;
-        cursor: pointer;
-        text-align: right;
-    }
-
-    .selected {
-        background-color: #337AB7; /* $color-select; */
-    }
-}
-
-#selectedFileExisting {
-    margin: 5px;
-    padding: 5px;
-}
-
-#convertExistingOrCreateComponent {
-    padding-left: 15px;
-}
-
-.toast {
-    opacity: 1 !important;
-}
-
-.authors-search-button {
-    height: 34px;
-}
-
-
-.taxonomy-show-children {
-    margin-right: 2px;
-}
-
-.exclamation-confirm-convert {
-    font-size: 250%;
-    color: $theme-color-light;
-}
-
-
-.toggle-button {
-    overflow: hidden;
-
-    input {
-        display: none;
-    }
-    label {
-        float: left;
-        display: inline-block;
-        width: 55px;
-        background-color: #e4e4e4;
-        color: #666666;
-        text-align: center;
-        text-shadow: none;
-        padding: 7px 7px;
-        -webkit-transition: all .3s ease-in-out;
-        -moz-transition:    all .3s ease-in-out;
-        -ms-transition:     all .3s ease-in-out;
-        -o-transition:      all .3s ease-in-out;
-        transition:         all .3s ease-in-out;
-    }
-
-    label.choose-large {
-        background-color: white;
+    .retraction-alert {
+        text-align: left;
         font-size: 14px;
-        padding: 10px 10px;
-        height: 120px;
-        text-align: center;
-        width: 200px;
-        display: inline;
-        border: none;
-        box-shadow: none;
-
-        i {
-            font-size: 70px;
-        }
+        padding: 10px 30px;
     }
-
-    label.wide-text-only {
-        float: none;
-        margin-right: -4px;
-        padding: 10px 10px;
-        height: 75px;
-        font-size: 14px;
-        width: 250px;
-        border-right: 1px solid #ccc;
-        i {
-            font-size: 30px;
-        }
-    }
-    label.wide-text-only:last-of-type {
-        border-right: none;
-    }
-
-
-    label:hover {
-        cursor: pointer;
-        color: gray;
-    }
-
-    input:checked + label {
-        background-color: $theme-color-light;
-        color: white;
-    }
-
-    label:first-of-type {
-        border-radius: 4px 0 0 4px;
-    }
-
-    label:last-of-type {
-        border-radius: 0 4px 4px 0;
-    }
-
-    label i {
-        font-size: 25px;
-        display: block;
-    }
-}
-
-label.title-label {
-    font-weight: normal;
-}
-
-.preprint-form-section.upload-section-block {
-    margin-top: 5px;
-    padding:5px 20px 5px 20px;
-    border-top: 1px solid #eee;
-
-
-    header {
+    .retraction_notice {
         font-size: 15px;
-        line-height: 75%;
-    }
-
-    &.bottom-title-underline {
-        border-bottom: 1px solid #eee;
-    }
-
-    .preprint-header-preview {
-        color: #444;
-        font-size: 14px;
-        i {
-            color: #888;
-            display: block;
-        }
-        .abstract {
-            white-space: pre-line;
-        }
     }
 }
 
-#locked-section {
-    cursor: default;
+.alert {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+.abstract-format {
+    line-height: 30px;
 }
 
+.detail-bottom-padding {
+    padding-bottom: 30px;
+}
 
-.lock-span {
+.detail-section-divider {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.share-tag {
+    border-radius: 5px;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 8px ;
+    background: $rw-navy;
     display: inline-block;
+    font-size: 85%;
+    margin-top: 4px;
 }
 
-.discover-provider-logo,
-.content-provider-logo {
-    background-position-x: center;
-    background-position-y: bottom;
-    background-repeat: no-repeat;
-    background-size: contain;
+.provider-favicon {
+    height: 16px;
+    //width: 16px;
+    padding-right: 4px;
 }
 
-.content-provider-logo {
-    min-height: 80px;
-    min-width: 120px;
-}
-
-.discover-provider-logo {
-    min-height: 80px;
-    min-width: 150px;
-}
-
-.edit-btn {
-    margin-bottom: 20px;
-}
-
-nav.preprint-navbar {
-    $nav-height: 50px;
-
-    top: 0;
-
-    .navbar-image {
-        float: left;
-        clear: both;
-        text-align: center;
-        background-position-x: center;
-        background-position-y: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        height: $nav-height - 2px;
-        width: $nav-height - 2px;
-        display: inline-block;
-        transform: translateY(-12px);
-        margin-right: 16px;
+.retraction-detail-page {
+    h2 {
+        font-size: 26px;
     }
-
-    .nav-user-dropdown {
-        height: $nav-height;
-    }
-
-    .dropdown > a {
-        padding-top: 12px;
-        padding-bottom: 12px;
-    }
-
-    .dropdown-menu {
-        color: white;
-    }
-
-    .sign-in {
-        padding-top: 8px;
-    }
-}
-
-nav.branded-navbar {
-    box-shadow: 0 0 4px rgba(82, 81, 81, 0.7);
 }

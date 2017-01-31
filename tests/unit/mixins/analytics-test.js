@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import Analytics from 'preprint-service/mixins/analytics';
+import Analytics from 'retraction-watch/mixins/analytics';
 import { module, test } from 'qunit';
 
 module('Unit | Mixin | analytics');

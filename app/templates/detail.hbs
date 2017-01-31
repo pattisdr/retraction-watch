@@ -1,0 +1,96 @@
+{{title model.title}}
+
+{{!Copied from EMBER SHARE > app/templates/work.hbs}}
+<div class="title-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                {{#if (eq model.type 'Retraction')}}
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 col-lg-4">
+                            <p class="alert alert-danger">
+                                <i class="fa fa-exclamation-circle"> </i>
+                                {{t "detail.retraction_notice"}}
+                            </p>
+                        </div>
+                    </div>
+                {{/if}}
+                {{#if retractions}}
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p class="alert alert-warning">
+                                <i class="fa fa-exclamation-triangle"> </i>
+                                {{t "detail.this_is_retraction"}}
+                                {{#each retractions as |retraction|}}
+                                    <div class="retraction_notice">
+                                        {{t "detail.retraction_notice"}}
+                                        {{link-to retraction.subject.title 'detail' retraction.subject.id}}
+                                    </div>
+                                {{/each}}
+                            </p>
+                        </div>
+                    </div>
+                {{/if}}
+
+                <h1 class="remove-upper-padding">
+                    {{#if safeTitle}}
+                        {{{safeTitle}}}
+                    {{else}}
+                        {{t "detail.untitled"}}
+                    {{/if}}
+                </h1>
+
+                <div>
+                    {{#if (not-eq model.type 'Retraction')}}
+                        <h1 class="remove-upper-padding"> <small>{{model.type}}</small> </h1>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container detail-bottom-padding retraction-detail-page">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+            <p class="p-t-lg">
+                {{#if safeDescription}}
+                    <div class="abstract-format">
+                        {{{safeDescription}}}
+                    </div>
+                {{else}}
+                    <span class="text-muted">
+                        <p> {{t "detail.no_description"}} </p>
+                    </span>
+                {{/if}}
+            </p>
+
+            {{#each sections as |section|}}
+                {{#if (get this section.value)}}
+                    <h2 class="p-t-lg">{{section.title}}</h2>
+                    <hr class="detail-section-divider">
+                    {{component section.component model=model data=(get this section.value)}}
+                {{/if}}
+            {{/each}}
+
+            {{#if hasExtra}}
+                <h2 class="p-t-lg">
+                    Additional Information
+                    <small>
+                        <a {{action 'toggleExtra'}} href="#">
+                            {{#if showExtra}}
+                                <i class="fa fa-caret-down"></i>
+                            {{else}}
+                                <i class="fa fa-caret-right"></i>
+                            {{/if}}
+                        </a>
+                    </small>
+                </h2>
+                <hr class="detail-section-divider">
+                {{#if showExtra}}
+                    {{json-pretty obj=model.extra shouldHighlight=true}}
+                {{/if}}
+            {{/if}}
+        </div>
+    </div>
+</div>

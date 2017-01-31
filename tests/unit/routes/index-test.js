@@ -1,4 +1,5 @@
 import { moduleFor, test } from 'ember-qunit';
+import Ember from 'ember';
 
 moduleFor('route:index', 'Unit | Route | index', {
   // Specify the other units that are required for this test.
@@ -6,6 +7,8 @@ moduleFor('route:index', 'Unit | Route | index', {
 });
 
 test('it exists', function(assert) {
-  let route = this.subject();
-  assert.ok(route);
+   Ember.run(() =>{
+         let route = this.subject();
+         assert.ok(route);
+    });
 });
