@@ -6,7 +6,6 @@ let filterQueryParams = ['tags', 'sources', 'publishers', 'funders', 'institutio
 export default Ember.Controller.extend(Analytics, {
     // Possible query parameters for retraction watch
     i18n: Ember.inject.service(),
-
     queryParams:  Ember.computed(function() {
         let allParams = ['q', 'start', 'end', 'sort', 'page'];
         allParams.push(...filterQueryParams);
@@ -26,6 +25,7 @@ export default Ember.Controller.extend(Analytics, {
     type: '',
     sort: '',
     detailRoute: 'detail',
+    providerLogo: true,
 
     // Filters displayed on left-hand pane of discover page
     facets: Ember.computed(function() {

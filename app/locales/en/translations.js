@@ -25,6 +25,7 @@ export default {
             paragraph: `powered by`,
             placeholder: `Search retraction database...`,
             placeholder_short: `Search retractions...`,
+            database_search: `Retraction Database`
         },
         sort_by: `Sort by`,
         main: {
