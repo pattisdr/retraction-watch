@@ -55,7 +55,7 @@
     "ember-link-action": "0.0.35",
     "ember-load-initializers": "^0.5.1",
     "ember-metrics": "0.6.3",
-    "ember-osf": "git+https://github.com/pattisdr/ember-osf.git#01ecfac3cc2138ad09cba338c3236f67df63a9bb",
+    "ember-osf": "git+https://github.com/pattisdr/ember-osf.git#20cf87585ee13f579bfd3a92479d338131193690",
     "ember-page-title": "3.0.6",
     "ember-power-select": "1.0.0-beta.7",
     "ember-resolver": "^2.0.3",
@@ -63,6 +63,7 @@
     "ember-welcome-page": "^1.0.1",
     "jscs": "^3.0.7",
     "loader.js": "^4.0.1",
+    "pagination-pager": "2.4.2",
     "phantomjs-prebuilt": "^2.1.11",
     "postcss": "^5.1.0"
   },
