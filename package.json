@@ -22,6 +22,7 @@
   "author": "",
   "license": "Apache-2.0",
   "devDependencies": {
+    "autoprefixer": "^6.3.7",
     "broccoli-asset-rev": "^2.4.2",
     "ember-ajax": "^2.0.1",
     "ember-bootstrap": "0.7.2",
@@ -54,7 +55,7 @@
     "ember-link-action": "0.0.35",
     "ember-load-initializers": "^0.5.1",
     "ember-metrics": "0.6.3",
-    "ember-osf": "file:///Users/dawnpattison/em-osf/ember-osf",
+    "ember-osf": "git+https://github.com/pattisdr/ember-osf.git#455c2edb2033a12483db57a9e5a5d1fd1e118fe4",
     "ember-page-title": "3.0.6",
     "ember-power-select": "1.0.0-beta.7",
     "ember-resolver": "^2.0.3",
@@ -62,6 +63,7 @@
     "ember-welcome-page": "^1.0.1",
     "jscs": "^3.0.7",
     "loader.js": "^4.0.1",
+    "pagination-pager": "2.4.2",
     "phantomjs-prebuilt": "^2.1.11",
     "postcss": "^5.1.0"
   },

@@ -20,13 +20,12 @@ export default Ember.Route.extend(ResetScrollMixin, Analytics, {
                       ${Object.keys(FRAGMENT_MAP).map((type) => `...on ${type} ${FRAGMENT_MAP[type]}`).join('\n')}
                   }
               }`
-
-        }).then(data => {
-            if (data.errors) {
-                throw Error(data.errors[0].message);
-            }
-            return data.data.shareObject;
-        });
+            }).then(data => {
+                if (data.errors) {
+                    throw Error(data.errors[0].message);
+                }
+                return data.data.shareObject;
+            });
     },
     afterModel(model) {
         // Enforces Retraction type on model
