@@ -1,12 +1,12 @@
 
-import { faviconUrl } from 'retraction-watch/helpers/favicon-url';
+import { iconUrl } from 'retraction-watch/helpers/icon-url';
 import { module, test } from 'qunit';
 
-module('Unit | Helper | favicon url');
+module('Unit | Helper | icon url');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  let result = faviconUrl([42]);
+  let result = iconUrl([42]);
   assert.ok(result);
 });
 

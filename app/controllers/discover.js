@@ -26,6 +26,7 @@ export default Ember.Controller.extend(Analytics, {
     sort: '',
     detailRoute: 'detail',
     providerLogo: true,
+    currentService: 'retraction_watch',
 
     // Filters displayed on left-hand pane of discover page
     facets: Ember.computed(function() {
